@@ -5,9 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anıl Gül - Kişisel CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f9fafb;
@@ -19,29 +20,53 @@
       background-color: #1f2937;
       color: #f3f4f6;
     }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
+    .dark-mode header {
+      background-color: #111827;
+    }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
       padding: 2rem;
-      transition: background 0.3s, color 0.3s;
+      margin-top: 2rem;
+      transition: background 0.3s;
     }
     .dark-mode .container {
       background: #374151;
-      color: #f3f4f6;
     }
     .profile-pic {
-      width: 140px;
+      width: 150px;
       border-radius: 50%;
       object-fit: cover;
+      margin: 1rem auto;
+      display: block;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+    h1, h2 {
+      text-align: center;
       margin-bottom: 1rem;
     }
-    h1 { font-size: 2rem; margin-bottom: .5rem; }
-    h2 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: .5rem; }
-    p { margin-bottom: 1rem; }
-    ul { padding-left: 1.2rem; }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
     .tag {
       display: inline-block;
       background-color: #e5e7eb;
@@ -49,98 +74,125 @@
       margin: .2rem;
       border-radius: 20px;
       font-size: .9rem;
+      transition: all 0.3s ease;
     }
-    .contact-form {
-      margin-top: 2rem;
+    .tag:hover {
+      background-color: #2563eb;
+      color: white;
+    }
+    .project-card {
+      background: #f3f4f6;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+    .links a {
+      display: inline-block;
+      margin: .5rem;
+      background: #2563eb;
+      color: white;
+      padding: .5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .links a:hover {
+      background: #1d4ed8;
     }
     input, textarea {
       width: 100%;
       padding: .8rem;
-      margin-bottom: 1rem;
+      margin: .5rem 0;
       border: 1px solid #d1d5db;
       border-radius: .5rem;
     }
     button {
-      background-color: #2563eb;
+      background-color: #10b981;
       color: white;
       border: none;
       padding: .8rem 1.5rem;
       border-radius: .5rem;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
-    a { color: #2563eb; text-decoration: none; }
-    .links {
-      margin-top: 1rem;
-    }
-    .links a {
-      margin-right: 1rem;
-      display: inline-block;
-      background-color: #e5e7eb;
-      padding: .5rem 1rem;
-      border-radius: .5rem;
-      text-decoration: none;
-      color: #111827;
-    }
-    .dark-mode .links a {
-      background-color: #6b7280;
-      color: #f3f4f6;
+    button:hover {
+      background-color: #059669;
     }
     .dark-toggle {
       position: fixed;
-      top: 10px;
+      top: 15px;
       right: 20px;
-      cursor: pointer;
       font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #10b981;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      display: none;
     }
   </style>
 </head>
 <body>
   <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+  <header>Anıl Gül - Backend Developer</header>
   <div class="container">
     <img src="photo.jpg" alt="Anıl Gül" class="profile-pic"/>
-    <h1>Anıl Gül</h1>
-    <p><strong>Backend Developer • Öğrenci</strong></p>
-
-    <h2>Hakkımda</h2>
-    <p>Kapadokya Üniversitesi’nde Yönetim Bilişim Sistemleri lisans öğrencisiyim. Java, Python ve C/C++ gibi yazılım dillerine hakimiyetim var. Cisco ve Udemy gibi platformlardan yazılım ve ağ teknolojileri alanında çeşitli sertifikalar aldım. Sürekli öğrenmeye açık bir geliştiriciyim.</p>
+    <h1>Hoş Geldin!</h1>
+    <p style="text-align: center;">Yönetim Bilişim Sistemleri öğrencisi & yazılım geliştirici. Java, Python, C++ & mikroservis teknolojilerine ilgiliyim.</p>
 
     <h2>Yetkinlikler</h2>
-    <div>
+    <div style="text-align:center;">
       <span class="tag">Java</span><span class="tag">Python</span><span class="tag">C++</span>
-      <span class="tag">MSSQL</span><span class="tag">Mikroservis</span><span class="tag">Ağ Güvenliği</span>
+      <span class="tag">.NET Core</span><span class="tag">Microservices</span><span class="tag">Network Security</span>
     </div>
 
     <h2>Projeler</h2>
     <div class="project-card">
-      <p><strong>Odak Menajeri:</strong> Zaman yönetimini RPG oyununa dönüştüren JavaFX uygulaması.</p>
-      <a href="https://github.com/anilg12/Odak-Menajeri-RPG" target="_blank">GitHub</a>
+      <p><strong>Odak Menajeri:</strong> Zaman yönetimini RPG’ye çeviren JavaFX uygulaması.</p>
+      <a href="https://github.com/anilg12/Odak-Menajeri-RPG" target="_blank">GitHub'da Gör</a>
     </div>
     <div class="project-card">
-      <p><strong>Windows 10 Performans Ayarları:</strong> Sistem optimizasyon aracı (NTLite ile).</p>
+      <p><strong>Windows 10 Performans Ayarları:</strong> Sistem optimizasyonu için NTLite yapılandırma seti.</p>
     </div>
 
     <h2>İletişim</h2>
-    <p><a href="mailto:anilgul2002@gmail.com">anilgul2002@gmail.com</a></p>
-
-    <div class="links">
-      <a href="https://github.com/anilg12" target="_blank">GitHub</a>
-      <a href="CV.pdf" download>CV’mi indir</a>
+    <p style="text-align: center;"><a href="mailto:anilgul2002@gmail.com">anilgul2002@gmail.com</a></p>
+    <div class="links" style="text-align:center;">
+      <a href="https://github.com/anilg12" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="CV.pdf" download><i class="fas fa-download"></i> CV’mi indir</a>
     </div>
 
-    <div class="contact-form">
-      <h3>İletişim Formu</h3>
-      <form>
-        <input type="text" placeholder="Adınız" required>
-        <input type="email" placeholder="E-posta adresiniz" required>
-        <textarea rows="5" placeholder="Mesajınız"></textarea>
-        <button type="submit">Gönder</button>
-      </form>
-    </div>
+    <h2>İletişim Formu</h2>
+    <form onsubmit="showToast(); return false;">
+      <input type="text" placeholder="Adınız" required>
+      <input type="email" placeholder="E-posta adresiniz" required>
+      <textarea rows="5" placeholder="Mesajınız" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
   </div>
+
+  <div class="toast" id="toast">Mesaj gönderildi ✅</div>
 
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
+    }
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
     }
   </script>
 </body>
