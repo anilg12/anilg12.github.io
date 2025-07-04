@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anıl Gül - Kişisel CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #1f2937;
+      color: #f3f4f6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      padding: 2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode .container {
+      background: #374151;
+      color: #f3f4f6;
+    }
+    .profile-pic {
+      width: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 2rem; margin-bottom: .5rem; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: .5rem; }
+    p { margin-bottom: 1rem; }
+    ul { padding-left: 1.2rem; }
+    .tag {
+      display: inline-block;
+      background-color: #e5e7eb;
+      padding: .3rem .6rem;
+      margin: .2rem;
+      border-radius: 20px;
+      font-size: .9rem;
+    }
+    .contact-form {
+      margin-top: 2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: .8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: .5rem;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: .8rem 1.5rem;
+      border-radius: .5rem;
+      cursor: pointer;
+    }
+    a { color: #2563eb; text-decoration: none; }
+    .links {
+      margin-top: 1rem;
+    }
+    .links a {
+      margin-right: 1rem;
+      display: inline-block;
+      background-color: #e5e7eb;
+      padding: .5rem 1rem;
+      border-radius: .5rem;
+      text-decoration: none;
+      color: #111827;
+    }
+    .dark-mode .links a {
+      background-color: #6b7280;
+      color: #f3f4f6;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+  <div class="container">
+    <img src="photo.jpg" alt="Anıl Gül" class="profile-pic"/>
+    <h1>Anıl Gül</h1>
+    <p><strong>Backend Developer • Öğrenci</strong></p>
+
+    <h2>Hakkımda</h2>
+    <p>Kapadokya Üniversitesi’nde Yönetim Bilişim Sistemleri lisans öğrencisiyim. Java, Python ve C/C++ gibi yazılım dillerine hakimiyetim var. Cisco ve Udemy gibi platformlardan yazılım ve ağ teknolojileri alanında çeşitli sertifikalar aldım. Sürekli öğrenmeye açık bir geliştiriciyim.</p>
+
+    <h2>Yetkinlikler</h2>
+    <div>
+      <span class="tag">Java</span><span class="tag">Python</span><span class="tag">C++</span>
+      <span class="tag">MSSQL</span><span class="tag">Mikroservis</span><span class="tag">Ağ Güvenliği</span>
+    </div>
+
+    <h2>Projeler</h2>
+    <div class="project-card">
+      <p><strong>Odak Menajeri:</strong> Zaman yönetimini RPG oyununa dönüştüren JavaFX uygulaması.</p>
+      <a href="https://github.com/anilg12/Odak-Menajeri-RPG" target="_blank">GitHub</a>
+    </div>
+    <div class="project-card">
+      <p><strong>Windows 10 Performans Ayarları:</strong> Sistem optimizasyon aracı (NTLite ile).</p>
+    </div>
+
+    <h2>İletişim</h2>
+    <p><a href="mailto:anilgul2002@gmail.com">anilgul2002@gmail.com</a></p>
+
+    <div class="links">
+      <a href="https://github.com/anilg12" target="_blank">GitHub</a>
+      <a href="CV.pdf" download>CV’mi indir</a>
+    </div>
+
+    <div class="contact-form">
+      <h3>İletişim Formu</h3>
+      <form>
+        <input type="text" placeholder="Adınız" required>
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <textarea rows="5" placeholder="Mesajınız"></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
