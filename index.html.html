@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark" />
+<title>Anıl Gül — Software Developer · IT Solutions</title>
+<meta name="description" content="Personal portfolio of Anıl Gül — Systems & Software Developer, backend / microservices and IT infrastructure specialist. Kapadokya University MIS graduate." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('anilgul.theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      window.__inkRGB = (t === 'light') ? '26,28,38' : '255,255,255';
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      window.__inkRGB = '255,255,255';
+    }
+  })();
+</script>
+<link rel="stylesheet" href="styles.css" />
+<script src="i18n.js" defer></script>
+</head>
+<body>
+
+<!-- CANVAS BG -->
+<canvas id="constellation"></canvas>
+<div class="bg-grain"></div>
+<div class="bg-vignette"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="pre-meta">
+      <span>SYSTEM · PORTFOLIO.v3</span>
+      <span>BOOT SEQUENCE</span>
+    </div>
+    <div id="pre-lines" style="margin-top: 16px;"></div>
+    <div class="pre-line"><span class="pre-cursor"></span></div>
+    <div class="pre-bar"><div class="pre-bar-fill" id="pre-bar-fill"></div></div>
+    <div class="pre-meta">
+      <span>OPERATOR · ANIL.GUL</span>
+      <span><span id="pre-pct">00</span>%</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <a class="brand-mark" href="#hero">
+    <span class="brand-dot"></span>
+    <span class="brand-text">ANIL GÜL</span>
+    <span class="brand-suffix">/ v3.0</span>
+  </a>
+  <nav class="nav-links">
+    <a class="nav-link active" data-target="hero" href="#hero"><span class="nav-num">01</span><span data-i18n="nav.index">Anasayfa</span></a>
+    <a class="nav-link" data-target="cap-section" href="#cap-section"><span class="nav-num">02</span><span data-i18n="nav.stack">Yetenekler</span></a>
+    <a class="nav-link" data-target="cert-section" href="#cert-section"><span class="nav-num">03</span><span data-i18n="nav.certs">Sertifikalar</span></a>
+    <a class="nav-link" data-target="orbital-section" href="#orbital-section"><span class="nav-num">04</span><span data-i18n="nav.orbit">Yörünge</span></a>
+    <a class="nav-link" data-target="project-section" href="#project-section"><span class="nav-num">05</span><span data-i18n="nav.work">Çalışmalar</span></a>
+    <a class="nav-link" data-target="contact-section" href="#contact-section"><span class="nav-num">06</span><span data-i18n="nav.contact">İletişim</span></a>
+  </nav>
+</header>
+
+<!-- LANG TOGGLE — outside topbar so mix-blend-mode doesn't eat the active bg -->
+<div class="lang-toggle" role="tablist" aria-label="Language">
+  <button class="lang-opt active" data-lang="tr" role="tab">TR</button>
+  <button class="lang-opt" data-lang="en" role="tab">EN</button>
+</div>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Tema değiştir" data-cursor="Tema">
+  <svg class="t-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  <svg class="t-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+</button>
+
+<!-- SIDE RAILS -->
+<div class="rail rail-l">MALATYA / TR</div>
+<div class="rail rail-r" id="liveClock">TR · 00:00:00</div>
+
+<!-- SCROLL HINT -->
+<div class="scroll-hint" id="scrollHint">
+  <span data-i18n="hero.scroll">Kaydır</span>
+  <span class="bar"></span>
+</div>
+
+<main>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section id="hero">
+  <div class="hero-grid"></div>
+
+  <!-- TECH BACKDROP — hybrid orbital + schematic -->
+  <div class="hero-orbit-backdrop" aria-hidden="true">
+    <svg viewBox="-500 -500 1000 1000">
+      <circle class="ring" r="280"/>
+      <circle class="ring ring-dashed" r="420"/>
+      <!-- schematic L-traces -->
+      <path class="trace" d="M -420 -120 L -300 -120 L -300 -40"/>
+      <path class="trace" d="M 420 80 L 320 80 L 320 160"/>
+      <path class="trace" d="M -80 -420 L -80 -340 L 40 -340"/>
+      <path class="trace" d="M 80 420 L 80 340 L -40 340"/>
+      <!-- end pads -->
+      <rect class="pad" x="-306" y="-46" width="12" height="12"/>
+      <rect class="pad" x="314" y="154" width="12" height="12"/>
+      <rect class="pad" x="34" y="-346" width="12" height="12"/>
+      <rect class="pad" x="-46" y="334" width="12" height="12"/>
+      <!-- markers -->
+      <circle class="marker" cx="280" cy="0" r="2"/>
+      <circle class="marker" cx="-280" cy="0" r="2"/>
+      <circle class="marker" cx="0" cy="280" r="2"/>
+      <circle class="marker" cx="0" cy="-280" r="2"/>
+    </svg>
+    <div class="hero-orbital-mini">
+      <div class="hero-mini-node" style="--rad: 340px; --start: 18deg;  --dur: 110s;"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+      <div class="hero-mini-node" style="--rad: 340px; --start: 200deg; --dur: 110s;"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg></div>
+      <div class="hero-mini-node" style="--rad: 460px; --start: 95deg;  --dur: 150s;"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/><path d="M6 9v6M9 18h3a3 3 0 003-3v-3"/></svg></div>
+    </div>
+  </div>
+
+  <!-- FLOATING TERMINAL PANEL -->
+  <div class="hero-term" aria-hidden="true">
+    <div class="hero-term-tb">
+      <span class="hero-term-dot"></span><span class="hero-term-dot"></span><span class="hero-term-dot"></span>
+      <span class="hero-term-title">~/portfolio · zsh</span>
+    </div>
+    <div class="hero-term-body">
+      <div class="ht-line"><span class="ht-prompt">anil@dev</span><span class="ht-sep">:</span><span class="ht-path">~/portfolio</span><span class="ht-sep">$</span> whoami</div>
+      <div class="ht-line ht-out">anil_gul · backend &amp; systems engineer</div>
+      <div class="ht-line"><span class="ht-prompt">anil@dev</span><span class="ht-sep">:</span><span class="ht-path">~/portfolio</span><span class="ht-sep">$</span> cat <span class="ht-str">stack.json</span></div>
+      <div class="ht-line ht-out">{</div>
+      <div class="ht-line ht-out">  <span class="ht-key">"primary"</span>: <span class="ht-str">"python"</span>,</div>
+      <div class="ht-line ht-out">  <span class="ht-key">"systems"</span>: <span class="ht-str">"ntlite"</span>,</div>
+      <div class="ht-line ht-out">  <span class="ht-key">"network"</span>: <span class="ht-str">"cisco"</span></div>
+      <div class="ht-line ht-out">}</div>
+      <div class="ht-line"><span class="ht-prompt">anil@dev</span><span class="ht-sep">:</span><span class="ht-path">~/portfolio</span><span class="ht-sep">$</span> <span class="ht-cursor"></span></div>
+    </div>
+  </div>
+
+  <!-- FLOATING CODE SPEC -->
+  <div class="hero-spec" aria-hidden="true">
+    <div class="hero-spec-head">
+      <span class="hero-spec-lang">PY</span>
+      <span class="hero-spec-name">profile.py</span>
+      <span class="hero-spec-tag">build · v3.0.1</span>
+    </div>
+    <pre class="hero-spec-code"><span class="ln">1</span><span class="cd"><span class="kw">class</span> <span class="cls">Developer</span>(<span class="cls">Human</span>):</span>
+<span class="ln">2</span><span class="cd">    name = <span class="str">"Anıl Gül"</span></span>
+<span class="ln">3</span><span class="cd">    born = <span class="num">2002</span></span>
+<span class="ln">4</span><span class="cd">    stack = [<span class="str">"py"</span>, <span class="str">"sql"</span>, <span class="str">"net"</span>]</span>
+<span class="ln">5</span><span class="cd">    <span class="kw">def</span> <span class="fn">build</span>(self) -> <span class="cls">System</span>:</span>
+<span class="ln">6</span><span class="cd">        <span class="kw">return</span> System(ready=<span class="num">True</span>)</span></pre>
+  </div>
+
+  <div class="hero-content">
+
+    <div class="hero-meta-row">
+      <span><span class="dot"></span><span data-i18n="hero.available">Fırsatlara açık</span></span>
+      <span data-i18n="hero.est">MALATYA · TR</span>
+      <span data-i18n="hero.portfolio">PORTFOLYO · MMXXVI</span>
+    </div>
+
+    <div class="hero-name-wrap">
+      <h1 class="hero-name" data-text="Anıl Gül">Anıl Gül</h1>
+    </div>
+
+    <div class="hero-sub">
+      <span class="pill"><span class="micro-dot"></span><span data-i18n="hero.role1">Sistem & Yazılım Geliştirici</span></span>
+      <span class="sep">/</span>
+      <span class="pill" data-i18n="hero.role2">BT Çözümleri &amp; Donanım</span>
+    </div>
+
+    <p class="hero-tagline" data-i18n="hero.tagline_html">
+      Kapadokya Üniversitesi Yönetim Bilişim Sistemleri mezunuyum. Donanım, ağ ve yazılımı izole parçalar olarak değil, kusursuz işleyen bir <em>ekosistem</em> olarak tasarlıyorum. Çıplak donanım (<em>bare-metal</em>) seviyesinden ve donanım soyutlama katmanı (<em>HAL</em>) entegrasyonundan başlayarak; <em>Java ve .NET</em> ile modern mikroservis mimarileri kurmaya kadar uçtan uca altyapılar inşa ediyorum. Kendi işletim sistemimi derleyecek seviyedeki <em>çekirdek (kernel)</em> bilgimle, donanımın en alt katmanından backend servislerine kadar tam kontrol sağlayan bir Yazılım Geliştirici / Sistem Mühendisiyim.
+    </p>
+
+    <div class="hero-cta-row">
+      <a class="btn btn-primary" href="#contact-section" data-cursor="Message">
+        <span data-i18n="hero.cta_primary">Konuşma başlat</span>
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#cap-section" data-cursor="Explore">
+        <span data-i18n="hero.cta_secondary">Yörüngeyi keşfet</span>
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================
+     CAPABILITIES MATRIX
+     ============================================ -->
+<section id="cap-section">
+  <div class="section-head">
+    <span class="num">/02</span><span data-i18n="nav.stack">Yetenekler</span><span class="line"></span><span data-i18n="cap.head_meta">4 alan · 23 yetkinlik</span>
+  </div>
+
+  <div class="cap-head-row" data-reveal>
+    <h2 data-i18n="cap.title_html">Teknik <em>yetkinlikler.</em></h2>
+    <p data-i18n="cap.subtitle">Diller, sistemler, ağ ve sertifikalar &mdash; teorik değil, projelerde ve sahada sınanmış, Cisco ile E-Devlet onaylı yetkinlikler.</p>
+  </div>
+
+  <div class="cap-matrix" id="capMatrix"></div>
+</section>
+
+<!-- ============================================
+     CERTIFICATIONS
+     ============================================ -->
+<section id="cert-section">
+  <div class="section-head">
+    <span class="num">/03</span><span data-i18n="cert.head">Doğrulanmış Sertifikalar</span><span class="line"></span><span data-i18n="cert.head_meta">7 sertifika · 4 Credly doğrulamalı</span>
+  </div>
+
+  <div class="cert-head-row cert-section-head" data-reveal>
+    <h2 data-i18n="cert.title_html"><em>Doğrulanmış</em> kimlik bilgileri ve sertifikalar.</h2>
+    <p data-i18n="cert.body">Her sertifika orijinaliyle doğrulanabilir veya PDF kopyası indirilebilir. Cisco Networking Academy, JS Institute ve Red Team Leaders tarafından verildi.</p>
+  </div>
+
+  <div class="cert-legend">
+    <span class="cert-legend-item"><span class="cert-legend-dot verified"></span><span data-i18n="cert.legend.verified">Credly doğrulamalı</span></span>
+    <span class="cert-legend-item"><span class="cert-legend-dot archived"></span><span data-i18n="cert.legend.archived">PDF arşivli</span></span>
+  </div>
+
+  <div class="cert-grid" id="certGrid"></div>
+</section>
+
+<!-- ============================================
+     ORBITAL TIMELINE
+     ============================================ -->
+<section id="orbital-section">
+  <div class="section-head">
+    <span class="num">/04</span><span data-i18n="orbit.head">Radyal Yörünge Zaman Çizelgesi</span><span class="line"></span><span data-i18n="orbit.head_meta">Etkileşimli · Tıklayarak gez</span>
+  </div>
+
+  <div class="orbital-intro" data-reveal>
+    <h2 data-i18n="orbit.intro_title_html">Beş nokta,<br/>tek bir yörünge.</h2>
+    <p data-i18n="orbit.intro_body">Eğitim, yazılım, sistemler, ağ ve sertifikalar &mdash; tek bir çekirdek etrafında dönen beceri noktalarından oluşan bir takımyıldız. Herhangi bir noktaya tıklayarak inceleyin; bağlantılara dokunarak ilerleyin.</p>
+  </div>
+
+  <div class="orbital-container" id="orbitalContainer">
+    <svg class="orbit-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
+      <circle cx="300" cy="300" r="220"/>
+      <circle cx="300" cy="300" r="220" class="dashed"/>
+      <circle cx="300" cy="300" r="140" class="dashed"/>
+      <circle cx="300" cy="300" r="80"/>
+      <circle class="marker" cx="520" cy="300" r="1.5"/>
+      <circle class="marker" cx="80"  cy="300" r="1.5"/>
+      <circle class="marker" cx="300" cy="520" r="1.5"/>
+      <circle class="marker" cx="300" cy="80"  r="1.5"/>
+    </svg>
+    <div class="center-orb">
+      <div class="center-ping"></div>
+      <div class="center-ping center-ping-2"></div>
+      <div class="center-inner"></div>
+    </div>
+    <div id="nodesLayer"></div>
+  </div>
+
+  <div class="orbit-controls">
+    <span class="orbit-ctrl"><span class="live-dot"></span><span data-i18n="orbit.ctrl1">Otomatik dönüyor</span></span>
+    <span class="orbit-ctrl"><span class="kbd">CLICK</span><span data-i18n="orbit.ctrl2">Noktayı incele</span></span>
+    <span class="orbit-ctrl"><span class="kbd">ESC</span><span data-i18n="orbit.ctrl3">Kapat</span></span>
+  </div>
+</section>
+
+<!-- ============================================
+     TECH STACK
+     ============================================ -->
+<section id="tech-section">
+  <div class="section-head">
+    <span class="num">/05</span><span data-i18n="tech.head">Teknik Yığın</span><span class="line"></span><span data-i18n="tech.head_meta">8 disiplin</span>
+  </div>
+
+  <div class="tech-head" data-reveal>
+    <h2 data-i18n="tech.title_html">Sıkça başvurduğum araçlar &mdash; <br/><em>kod, donanım ve kablo</em> arasında.</h2>
+    <p data-i18n="tech.body">Çoğu projenin aynı anda ihtiyaç duyduğu katmanlarda rahatım: uygulama dili, altındaki veritabanı, üzerinden gittiği ağ ve çalıştığı işletim sistemi imajı.</p>
+  </div>
+
+  <div class="tech-grid" id="techGrid"></div>
+</section>
+
+<!-- ============================================
+     PROJECT — OPTISTOCK
+     ============================================ -->
+<section id="project-section">
+  <div class="section-head">
+    <span class="num">/06</span><span data-i18n="proj.head">Seçili Çalışmalar</span><span class="line"></span><span data-i18n="proj.head_meta">Öne çıkan + proje arşivi</span>
+  </div>
+
+  <div class="proj-featured-tag" data-reveal data-i18n="proj.featured">/ Öne çıkan çalışma</div>
+
+  <div class="project-wrap">
+
+    <div class="project-art" data-reveal>
+      <div class="project-art-grid"></div>
+      <div class="project-art-window">
+        <div class="win-titlebar">
+          <span class="tb-dot"></span><span class="tb-dot"></span><span class="tb-dot"></span>
+          <span class="win-title">optistock.app — inventory dashboard</span>
+        </div>
+        <div class="win-body">
+          <div class="opti-row">
+            <div class="opti-stat">
+              <div class="opti-stat-label" data-i18n="proj.kpi1">Aktif SKU</div>
+              <div class="opti-stat-val">1,284</div>
+              <div class="opti-stat-trend" data-i18n="proj.kpi1_trend">↑ %4.2 bu hafta</div>
+            </div>
+            <div class="opti-stat">
+              <div class="opti-stat-label" data-i18n="proj.kpi2">Ort. yanıt</div>
+              <div class="opti-stat-val">38 ms</div>
+              <div class="opti-stat-trend" data-i18n="proj.kpi2_trend">SQLite · yerel</div>
+            </div>
+          </div>
+          <div class="opti-chart">
+            <div class="opti-chart-label" data-i18n="proj.chart_label">Stok hareketi · 24s</div>
+            <svg id="optiChart"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-info">
+      <div class="eyebrow" data-i18n="proj.eyebrow">/ Vaka Çalışması 01</div>
+      <h3>OptiStock.</h3>
+      <p class="tagline" data-i18n="proj.tagline">Tam-yığın bir stok motoru &mdash; önce masaüstü olarak inşa edildi, sonra web'e açıldı.</p>
+      <p class="desc" data-i18n="proj.desc">Akademik bir projeden başlayan, küçük bir işletmenin stoğunu nasıl yönettiğine dair pragmatik bir çalışmaya dönüşen ürün. OptiStock; bir Flet masaüstü istemcisi, yerel bir SQLite veritabanı ve temiz bir Python servis katmanını birleştirir &mdash; yerli hissetmek, çevrimdışı çalışmak ve sonraki geliştirici için okunabilir kalmak ve çevrimiçi ortamda geliştirilebilir olabilmesi amacıyla tasarlandı.</p>
+
+      <div class="project-meta">
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.role">Rol</div><div class="pm-val" data-i18n="proj.role_v">Tek başına geliştirme</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.year">Yıl</div><div class="pm-val">2026</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.scope">Kapsam</div><div class="pm-val" data-i18n="proj.scope_v">Masaüstü + Web</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.stack">Yığın</div><div class="pm-val">Python / Flet</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.data">Veri</div><div class="pm-val">SQLite</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.status">Durum</div><div class="pm-val" data-i18n="proj.status_v">v1 · yayında</div></div>
+      </div>
+
+      <div class="project-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Flet</span>
+        <span class="skill-tag">SQLite</span>
+        <span class="skill-tag">Desktop GUI</span>
+        <span class="skill-tag">Inventory Logic</span>
+        <span class="skill-tag">Cross-platform</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-archive-head" data-reveal>
+    <h3 data-i18n="proj.archive_title_html">Proje <em>arşivi.</em></h3>
+    <p data-i18n="proj.archive_body">Sistem, ağ ve yazılım katmanlarında süregelen çalışmalar. Yeni projeler eklendikçe burası büyüyor.</p>
+  </div>
+
+  <div class="project-grid" id="projectGrid"></div>
+</section>
+
+<!-- ============================================
+     CONTACT
+     ============================================ -->
+<section id="contact-section">
+  <div class="contact-wrap">
+
+    <div class="contact-marquee-row">
+      <div class="marquee-track">
+        <span class="word" data-i18n="contact.marquee1">Sistem</span>
+        <span class="word outline" data-i18n="contact.marquee2">Mimarisi</span>
+        <span class="word" data-i18n="contact.marquee1">Sistem</span>
+        <span class="word outline" data-i18n="contact.marquee2">Mimarisi</span>
+        <span class="word" data-i18n="contact.marquee1">Sistem</span>
+        <span class="word outline" data-i18n="contact.marquee2">Mimarisi</span>
+        <span class="word" data-i18n="contact.marquee1">Sistem</span>
+        <span class="word outline" data-i18n="contact.marquee2">Mimarisi</span>
+      </div>
+    </div>
+
+    <div class="contact-card" data-reveal>
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+
+      <div class="eyebrow" data-i18n="contact.eyebrow">/ İşbirliğine açık</div>
+      <h2 class="contact-title" style="margin-top: 14px;" data-i18n="contact.title_html">Karmaşık BT altyapıları, <em>mikroservis mimarileri</em>, yazılım geliştirme ve özel sistem çözümleri arıyorsanız &mdash; doğru kişiyle konuşuyorsunuz.</h2>
+      <p class="contact-desc" data-i18n="contact.desc">Sistem yöneticiliği, ağ mühendisliği ve backend / mikroservis geliştirme rolleri için açığım &mdash; uzaktan ya da Malatya, Türkiye merkezli.</p>
+
+      <div class="contact-channels">
+        <a class="channel" href="mailto:anillgul2002@gmail.com" data-cursor="Send">
+          <div class="ch-label" data-i18n="contact.ch_email">/ E-posta · birincil</div>
+          <div class="ch-value">anillgul2002@gmail.com</div>
+          <svg class="ch-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a class="channel" href="https://anilg12.github.io" target="_blank" rel="noreferrer" data-cursor="Open">
+          <div class="ch-label" data-i18n="contact.ch_github">/ GitHub · portfolyo</div>
+          <div class="ch-value">anilg12.github.io</div>
+          <svg class="ch-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a class="channel" href="https://www.linkedin.com/in/an%C4%B1l-g%C3%BCl-753417249?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" data-cursor="Open">
+          <div class="ch-label" data-i18n="contact.ch_linkedin">/ LinkedIn · profil</div>
+          <div class="ch-value">linkedin.com/in/anıl-gül</div>
+          <svg class="ch-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-left" data-i18n="foot.left">© MMXXVI · ANIL GÜL · TÜM HAKLARI SAKLIDIR</div>
+  <div class="foot-right">Portfolio <span>v3.0</span><span data-i18n="foot.right_v"> · Özenle inşa edildi</span></div>
+</footer>
+
+<!-- PDF VIEWER MODAL -->
+<div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="pdf-modal-backdrop" data-pdf-close></div>
+  <div class="pdf-modal-panel">
+    <header class="pdf-modal-bar">
+      <div class="pdf-modal-meta">
+        <span class="pdf-modal-dot"></span>
+        <span class="pdf-modal-title" id="pdfModalTitle">certificate.pdf</span>
+      </div>
+      <div class="pdf-modal-actions">
+        <a class="pdf-modal-btn" id="pdfModalOpen" href="#" target="_blank" rel="noreferrer" data-cursor="Open">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span data-i18n="pdf.newtab">Yeni sekme</span>
+        </a>
+        <a class="pdf-modal-btn" id="pdfModalDownload" href="#" download data-cursor="Download">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="pdf.download">İndir</span>
+        </a>
+        <button class="pdf-modal-btn pdf-modal-close" id="pdfModalClose" type="button" data-pdf-close data-cursor="Close" aria-label="Kapat">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </header>
+    <div class="pdf-modal-frame-wrap">
+      <iframe class="pdf-modal-frame" id="pdfModalFrame" title="PDF preview"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
