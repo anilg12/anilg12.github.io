@@ -1,0 +1,254 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  #portfolio { background: #000; color: #fff; min-height: 100vh; font-family: var(--font-sans, system-ui, sans-serif); overflow-x: hidden; }
+  .hero { text-align: center; padding: 3rem 1rem 1rem; position: relative; z-index: 2; }
+  .hero-name { font-size: 2.8rem; font-weight: 500; letter-spacing: -0.02em; background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1; }
+  .hero-title { font-size: 0.85rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.45); margin-top: 0.6rem; text-transform: uppercase; font-weight: 400; }
+  .hero-desc { font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-top: 1rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+  .hero-links { display: flex; gap: 12px; justify-content: center; margin-top: 1.2rem; flex-wrap: wrap; }
+  .hero-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s; cursor: pointer; }
+  .hero-link:hover { color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.35); }
+  .hint { text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.2); letter-spacing: 0.12em; margin-top: 0.5rem; }
+  .orbital-container { position: relative; width: 100%; height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .orbit-ring { position: absolute; width: 400px; height: 400px; border-radius: 50%; border: 0.5px solid rgba(255,255,255,0.07); }
+  .orbit-ring-2 { width: 280px; height: 280px; border-color: rgba(255,255,255,0.04); }
+  .center-orb { position: absolute; width: 60px; height: 60px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, rgba(150,100,255,0.9), rgba(50,100,220,0.7), rgba(20,180,140,0.5)); display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 0 30px rgba(100,80,255,0.3), 0 0 60px rgba(50,100,220,0.15); }
+  .center-inner { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.85); }
+  .center-ping { position: absolute; width: 75px; height: 75px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); animation: ping 2s ease-out infinite; }
+  .center-ping-2 { width: 90px; height: 90px; border-color: rgba(255,255,255,0.07); animation: ping 2s ease-out infinite 0.8s; }
+  @keyframes ping { 0% { transform: scale(0.8); opacity: 0.7; } 100% { transform: scale(1.3); opacity: 0; } }
+  .node { position: absolute; cursor: pointer; display: flex; flex-direction: column; align-items: center; transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .node-icon { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.3); background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+  .node-icon svg { width: 17px; height: 17px; stroke: rgba(255,255,255,0.8); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s; }
+  .node.active .node-icon { background: #fff; border-color: #fff; transform: scale(1.5); box-shadow: 0 0 20px rgba(255,255,255,0.3); }
+  .node.active .node-icon svg { stroke: #000; }
+  .node-label { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); margin-top: 10px; white-space: nowrap; transition: all 0.3s; text-transform: uppercase; }
+  .node.active .node-label { color: #fff; transform: scale(1.15); }
+  .node-card { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); width: 260px; background: rgba(5,5,5,0.97); border: 0.5px solid rgba(255,255,255,0.18); border-radius: 10px; padding: 0; box-shadow: 0 20px 60px rgba(0,0,0,0.9); z-index: 200; overflow: hidden; }
+  .card-connector { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 1px; height: 12px; background: rgba(255,255,255,0.25); }
+  .card-header { padding: 12px 14px 8px; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
+  .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .card-badge { font-size: 9px; letter-spacing: 0.1em; padding: 3px 8px; border-radius: 20px; font-weight: 500; }
+  .badge-completed { background: #fff; color: #000; }
+  .badge-progress { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); border: 0.5px solid rgba(255,255,255,0.25); }
+  .badge-pending { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.45); border: 0.5px solid rgba(255,255,255,0.12); }
+  .card-date { font-size: 10px; color: rgba(255,255,255,0.3); font-family: var(--font-mono, monospace); }
+  .card-title { font-size: 13px; font-weight: 500; color: #fff; }
+  .card-body { padding: 10px 14px 12px; font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .skills-list { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .skill-tag { font-size: 10px; padding: 2px 8px; border-radius: 3px; background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.65); }
+  .energy-section { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid rgba(255,255,255,0.07); }
+  .energy-label { display: flex; justify-content: space-between; font-size: 10px; color: rgba(255,255,255,0.35); margin-bottom: 5px; }
+  .energy-bar { height: 2px; background: rgba(255,255,255,0.07); border-radius: 1px; overflow: hidden; }
+  .energy-fill { height: 100%; background: linear-gradient(90deg, #5b6cf8, #a855f7); border-radius: 1px; }
+  .related-section { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid rgba(255,255,255,0.07); }
+  .related-label { font-size: 9px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .related-btn { font-size: 10px; color: rgba(255,255,255,0.55); border: 0.5px solid rgba(255,255,255,0.12); background: transparent; padding: 3px 8px; border-radius: 3px; cursor: pointer; margin: 2px 2px 0 0; display: inline-flex; align-items: center; gap: 3px; transition: all 0.2s; }
+  .related-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+  .footer { text-align: center; padding: 1.5rem 1rem 2rem; border-top: 0.5px solid rgba(255,255,255,0.05); }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+  .footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+  .footer-link:hover { color: rgba(255,255,255,0.7); }
+</style>
+
+<div id="portfolio">
+  <h2 class="sr-only">Anıl Gül — Personal Portfolio with Radial Orbital Timeline</h2>
+  <div class="hero">
+    <div class="hero-name">Anıl Gül</div>
+    <div class="hero-title">Software Developer &nbsp;·&nbsp; IT Solutions &amp; Hardware Expert</div>
+    <div class="hero-desc">Kapadokya University Management Information Systems (2022–2026). Specializing in backend development and system optimizations.</div>
+    <div class="hero-links">
+      <a class="hero-link" href="mailto:anillgul2002@gmail.com">✉ anillgul2002@gmail.com</a>
+      <a class="hero-link" href="https://anilg12.github.io" target="_blank">⟡ anilg12.github.io</a>
+    </div>
+    <div class="hint">Click any node to explore · Click background to dismiss</div>
+  </div>
+
+  <div class="orbital-container" id="orbitalContainer">
+    <div class="orbit-ring"></div>
+    <div class="orbit-ring orbit-ring-2"></div>
+    <div class="center-orb">
+      <div class="center-ping"></div>
+      <div class="center-ping-2"></div>
+      <div class="center-inner"></div>
+    </div>
+    <div id="nodesLayer"></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="mailto:anillgul2002@gmail.com">Email</a>
+      <a class="footer-link" href="https://anilg12.github.io" target="_blank">GitHub / Portfolio</a>
+      <span class="footer-link" style="cursor:default">Kapadokya University · 2022–2026</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const icons = {
+  gradcap: `<svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>`,
+  code: `<svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  cpu: `<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
+  award: `<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+  network: `<svg viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 011-1h12a1 1 0 011 1v3"/><line x1="12" y1="12" x2="12" y2="8"/></svg>`,
+  arrow: `<svg viewBox="0 0 24 24" style="width:8px;height:8px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`
+};
+
+const timelineData = [
+  {
+    id: 1,
+    title: "Education",
+    date: "2022–2026",
+    status: "in-progress",
+    energy: 80,
+    icon: "gradcap",
+    relatedIds: [2, 3],
+    content: "Kapadokya University, Management Information Systems. Building a strong foundation in software engineering, database systems, and IT infrastructure. Active academic project work including OptiStock — a full-stack desktop & web app built with Python, Flet, and SQLite.",
+    skills: ["MIS", "Python", "SQLite", "Flet", "Software Engineering", "IT Infrastructure"]
+  },
+  {
+    id: 2,
+    title: "Software Dev",
+    date: "2023–now",
+    status: "in-progress",
+    energy: 78,
+    icon: "code",
+    relatedIds: [1, 3],
+    content: "Backend and full-stack development with hands-on project experience. Skilled in building REST APIs, database-driven apps, and desktop applications. Comfortable working across multiple paradigms and stacks.",
+    skills: ["Python", "Java", ".NET", "REST API", "SQLite / SQL", "Flet", "Git", "OOP"]
+  },
+  {
+    id: 3,
+    title: "Sys & Ops",
+    date: "2022–now",
+    status: "in-progress",
+    energy: 88,
+    icon: "cpu",
+    relatedIds: [1, 2, 4],
+    content: "Deep expertise in system optimization and low-level configuration. Builds custom lightweight Windows images using NTLite for performance-critical environments. Proficient in advanced hardware diagnostics, driver-level troubleshooting, and network security basics.",
+    skills: ["NTLite", "Windows Imaging", "Hardware Troubleshooting", "Network Security", "Driver Config", "System Optimization"]
+  },
+  {
+    id: 4,
+    title: "Cisco Net.",
+    date: "2023",
+    status: "completed",
+    energy: 100,
+    icon: "network",
+    relatedIds: [3, 5],
+    content: "Cisco Networking certification covering routing protocols, switching fundamentals, IP addressing, and network infrastructure design. Demonstrates ability to configure and troubleshoot real-world network environments.",
+    skills: ["Routing & Switching", "IP Addressing", "VLANs", "Network Topology", "Cisco IOS", "Troubleshooting"]
+  },
+  {
+    id: 5,
+    title: "Certificates",
+    date: "2023–2024",
+    status: "completed",
+    energy: 100,
+    icon: "award",
+    relatedIds: [4],
+    content: "Complementary professional certifications strengthening both technical and interpersonal skills. Covers modern productivity methods, AI literacy, and workplace communication competencies.",
+    skills: ["Work Management & Empathy", "Note-Taking Techniques", "Intro to Artificial Intelligence", "Professional Skills"]
+  }
+];
+
+let rotationAngle = 0;
+let autoRotate = true;
+let activeId = null;
+let lastTs = 0;
+
+function getPos(index, total, angle) {
+  const a = ((index / total) * 360 + angle) % 360;
+  const rad = (a * Math.PI) / 180;
+  const radius = 185;
+  return {
+    x: radius * Math.cos(rad),
+    y: radius * Math.sin(rad),
+    opacity: Math.max(0.35, Math.min(1, 0.35 + 0.65 * ((1 + Math.sin(rad)) / 2))),
+    zIndex: Math.round(100 + 50 * Math.cos(rad))
+  };
+}
+
+function badgeClass(s) {
+  return s === "completed" ? "badge-completed" : s === "in-progress" ? "badge-progress" : "badge-pending";
+}
+function badgeLabel(s) {
+  return s === "completed" ? "COMPLETE" : s === "in-progress" ? "IN PROGRESS" : "PENDING";
+}
+
+function renderNodes() {
+  const layer = document.getElementById("nodesLayer");
+  const total = timelineData.length;
+  layer.innerHTML = "";
+
+  timelineData.forEach((item, i) => {
+    const pos = getPos(i, total, rotationAngle);
+    const isActive = activeId === item.id;
+
+    const div = document.createElement("div");
+    div.className = "node" + (isActive ? " active" : "");
+    div.style.cssText = `left:50%;top:50%;transform:translate(calc(-50% + ${pos.x}px),calc(-50% + ${pos.y}px));z-index:${isActive ? 300 : pos.zIndex};opacity:${isActive ? 1 : pos.opacity};`;
+    div.dataset.id = item.id;
+
+    const skillTagsHtml = item.skills.map(s => `<span class="skill-tag">${s}</span>`).join("");
+    const relatedHtml = item.relatedIds.map(rid => {
+      const r = timelineData.find(t => t.id === rid);
+      return r ? `<button class="related-btn" data-relid="${rid}">${r.title} ${icons.arrow}</button>` : "";
+    }).join("");
+
+    const cardHtml = isActive ? `
+      <div class="node-card">
+        <div class="card-connector"></div>
+        <div class="card-header">
+          <div class="card-meta">
+            <span class="card-badge ${badgeClass(item.status)}">${badgeLabel(item.status)}</span>
+            <span class="card-date">${item.date}</span>
+          </div>
+          <div class="card-title">${item.title}</div>
+        </div>
+        <div class="card-body">
+          <p>${item.content}</p>
+          <div class="skills-list">${skillTagsHtml}</div>
+          <div class="energy-section">
+            <div class="energy-label"><span>Proficiency</span><span>${item.energy}%</span></div>
+            <div class="energy-bar"><div class="energy-fill" style="width:${item.energy}%"></div></div>
+          </div>
+          ${relatedHtml ? `<div class="related-section"><div class="related-label">Connected nodes</div>${relatedHtml}</div>` : ""}
+        </div>
+      </div>` : "";
+
+    div.innerHTML = `<div class="node-icon">${icons[item.icon]}</div><div class="node-label">${item.title}</div>${cardHtml}`;
+    layer.appendChild(div);
+  });
+}
+
+document.getElementById("nodesLayer").addEventListener("click", function(e) {
+  const relBtn = e.target.closest(".related-btn");
+  if (relBtn) { e.stopPropagation(); activeId = parseInt(relBtn.dataset.relid); autoRotate = false; renderNodes(); return; }
+  const nodeEl = e.target.closest(".node");
+  if (nodeEl) {
+    e.stopPropagation();
+    const id = parseInt(nodeEl.dataset.id);
+    activeId = activeId === id ? null : id;
+    autoRotate = activeId === null;
+    renderNodes();
+  }
+});
+
+document.getElementById("orbitalContainer").addEventListener("click", function(e) {
+  if (!e.target.closest(".node")) { activeId = null; autoRotate = true; renderNodes(); }
+});
+
+function animate(ts) {
+  if (autoRotate && ts - lastTs > 50) {
+    rotationAngle = (rotationAngle + 0.3) % 360;
+    lastTs = ts;
+    renderNodes();
+  }
+  requestAnimationFrame(animate);
+}
+
+renderNodes();
+requestAnimationFrame(animate);
+</script>
