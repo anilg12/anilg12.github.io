@@ -689,7 +689,8 @@ const projectIcons = {
   cpu: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="1"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="5"/><line x1="15" y1="2" x2="15" y2="5"/><line x1="9" y1="19" x2="9" y2="22"/><line x1="15" y1="19" x2="15" y2="22"/><line x1="19" y1="9" x2="22" y2="9"/><line x1="19" y1="15" x2="22" y2="15"/><line x1="2" y1="9" x2="5" y2="9"/><line x1="2" y1="15" x2="5" y2="15"/></svg>`,
   net: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 011-1h12a1 1 0 011 1v3"/><line x1="12" y1="12" x2="12" y2="8"/></svg>`,
   api: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
-  game: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="3"/></svg>`
+  game: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="3"/></svg>`,
+  box: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`
 };
 
 /* Featured project (OptiStock) lives in the HTML. Add new builds here —
@@ -697,7 +698,21 @@ const projectIcons = {
 const projects = [
   {
     code: "P-02",
-    icon: "game",
+    icon: "box",
+    accent: "green",
+    title: { tr: "OptiStock", en: "OptiStock" },
+    meta:  { tr: "Python · Flet", en: "Python · Flet" },
+    year:  { tr: "2026", en: "2026" },
+    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
+    desc:  {
+      tr: "Tam-yığın bir stok motoru — önce masaüstü olarak inşa edildi, sonra web'e açıldı. Bir Flet masaüstü istemcisi, yerel bir SQLite veritabanı ve temiz bir Python servis katmanı; yerli hissetmek, çevrimdışı çalışmak ve okunabilir kalmak üzere tasarlandı.",
+      en: "A full-stack inventory engine — built desktop-first, then unfolded to web. A Flet desktop client, a local SQLite store and a clean Python service layer; designed to feel native, run offline and stay readable."
+    },
+    tags: ["Python", "Flet", "SQLite", "Desktop GUI", "Inventory Logic"],
+    link: { url: "https://anilg12.github.io", label: { tr: "Detaylar", en: "Details" } }
+  },
+  {
+    code: "P-03",
     accent: "red",
     title: { tr: "Odak Menajeri RPG", en: "Focus Manager RPG" },
     meta:  { tr: "Java · JavaFX", en: "Java · JavaFX" },
@@ -711,7 +726,7 @@ const projects = [
     link: { url: "https://github.com/anilg12/Odak-Menajeri-RPG", label: { tr: "GitHub", en: "GitHub" } }
   },
   {
-    code: "P-03",
+    code: "P-04",
     icon: "os",
     accent: "purple",
     title: { tr: "Özel Windows İmajı", en: "Custom Windows Image" },
@@ -726,7 +741,7 @@ const projects = [
     link: { url: "https://anilg12.github.io", label: { tr: "Detaylar", en: "Details" } }
   },
   {
-    code: "P-04",
+    code: "P-05",
     icon: "cpu",
     accent: "blue",
     title: { tr: "Açık Kaynak İşletim Sistemi", en: "Open-source OS / Kernel" },
