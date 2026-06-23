@@ -306,24 +306,41 @@
       <div class="project-art-window">
         <div class="win-titlebar">
           <span class="tb-dot"></span><span class="tb-dot"></span><span class="tb-dot"></span>
-          <span class="win-title">optistock.app — inventory dashboard</span>
+          <span class="win-title">oblivion — system uninstaller</span>
         </div>
         <div class="win-body">
+          <div class="obl-head">
+            <div class="obl-brand">
+              <span class="obl-logo" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(28 12 12)"/></svg>
+              </span>
+              <div>
+                <div class="obl-brand-name">Oblivion</div>
+                <div class="obl-brand-sub" data-i18n="proj.kpi2_trend">Advanced Uninstaller</div>
+              </div>
+            </div>
+            <span class="obl-mode" data-i18n="proj.kpi1_trend">● Avcı Modu</span>
+          </div>
           <div class="opti-row">
             <div class="opti-stat">
-              <div class="opti-stat-label" data-i18n="proj.kpi1">Aktif SKU</div>
-              <div class="opti-stat-val">1,284</div>
-              <div class="opti-stat-trend" data-i18n="proj.kpi1_trend">↑ %4.2 bu hafta</div>
+              <div class="opti-stat-label" data-i18n="proj.kpi1">Kalıntı bulundu</div>
+              <div class="opti-stat-val">248</div>
+              <div class="opti-stat-trend obl-trend-warn">Registry · FS</div>
             </div>
             <div class="opti-stat">
-              <div class="opti-stat-label" data-i18n="proj.kpi2">Ort. yanıt</div>
-              <div class="opti-stat-val">38 ms</div>
-              <div class="opti-stat-trend" data-i18n="proj.kpi2_trend">SQLite · yerel</div>
+              <div class="opti-stat-label" data-i18n="proj.kpi2">Kazanılan alan</div>
+              <div class="opti-stat-val">4.7 GB</div>
+              <div class="opti-stat-trend" data-i18n="proj.chart_label">↓ temizlendi</div>
             </div>
           </div>
-          <div class="opti-chart">
-            <div class="opti-chart-label" data-i18n="proj.chart_label">Stok hareketi · 24s</div>
-            <svg id="optiChart"></svg>
+          <div class="obl-scan">
+            <div class="obl-scan-rows">
+              <div class="obl-scan-row"><span class="obl-dot ok"></span><span class="obl-scan-name">HKLM\Software\…\App</span><span class="obl-scan-meta">12 keys</span></div>
+              <div class="obl-scan-row"><span class="obl-dot ok"></span><span class="obl-scan-name">%AppData%\App\Cache</span><span class="obl-scan-meta">1.2 GB</span></div>
+              <div class="obl-scan-row"><span class="obl-dot ok"></span><span class="obl-scan-name">Startup\App.lnk</span><span class="obl-scan-meta">removed</span></div>
+              <div class="obl-scan-row scanning"><span class="obl-dot"></span><span class="obl-scan-name">%Temp%\App\*</span><span class="obl-scan-meta">scanning…</span></div>
+            </div>
+            <div class="obl-progress"><span></span></div>
           </div>
         </div>
       </div>
@@ -331,26 +348,26 @@
 
     <div class="project-info">
       <div class="eyebrow" data-i18n="proj.eyebrow">/ Vaka Çalışması 01</div>
-      <h3>OptiStock.</h3>
+      <h3>Oblivion.</h3>
       <p class="tagline" data-i18n="proj.tagline">Tam-yığın bir stok motoru &mdash; önce masaüstü olarak inşa edildi, sonra web'e açıldı.</p>
       <p class="desc" data-i18n="proj.desc">Akademik bir projeden başlayan, küçük bir işletmenin stoğunu nasıl yönettiğine dair pragmatik bir çalışmaya dönüşen ürün. OptiStock; bir Flet masaüstü istemcisi, yerel bir SQLite veritabanı ve temiz bir Python servis katmanını birleştirir &mdash; yerli hissetmek, çevrimdışı çalışmak ve sonraki geliştirici için okunabilir kalmak ve çevrimiçi ortamda geliştirilebilir olabilmesi amacıyla tasarlandı.</p>
 
       <div class="project-meta">
         <div class="pm-cell"><div class="pm-label" data-i18n="proj.role">Rol</div><div class="pm-val" data-i18n="proj.role_v">Tek başına geliştirme</div></div>
         <div class="pm-cell"><div class="pm-label" data-i18n="proj.year">Yıl</div><div class="pm-val">2026</div></div>
-        <div class="pm-cell"><div class="pm-label" data-i18n="proj.scope">Kapsam</div><div class="pm-val" data-i18n="proj.scope_v">Masaüstü + Web</div></div>
-        <div class="pm-cell"><div class="pm-label" data-i18n="proj.stack">Yığın</div><div class="pm-val">Python / Flet</div></div>
-        <div class="pm-cell"><div class="pm-label" data-i18n="proj.data">Veri</div><div class="pm-val">SQLite</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.scope">Kapsam</div><div class="pm-val" data-i18n="proj.scope_v">Masaüstü (Windows)</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.stack">Yığın</div><div class="pm-val">C# / WPF</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.data">Veri</div><div class="pm-val">Registry · FS</div></div>
         <div class="pm-cell"><div class="pm-label" data-i18n="proj.status">Durum</div><div class="pm-val" data-i18n="proj.status_v">v1 · yayında</div></div>
       </div>
 
       <div class="project-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Flet</span>
-        <span class="skill-tag">SQLite</span>
-        <span class="skill-tag">Desktop GUI</span>
-        <span class="skill-tag">Inventory Logic</span>
-        <span class="skill-tag">Cross-platform</span>
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">WPF</span>
+        <span class="skill-tag">.NET</span>
+        <span class="skill-tag">Windows</span>
+        <span class="skill-tag">Registry</span>
+        <span class="skill-tag">Win32 API</span>
       </div>
     </div>
   </div>
@@ -396,9 +413,9 @@
           <div class="ch-value">anillgul2002@gmail.com</div>
           <svg class="ch-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
-        <a class="channel" href="https://anilg12.github.io" target="_blank" rel="noreferrer" data-cursor="Open">
-          <div class="ch-label" data-i18n="contact.ch_github">/ GitHub · portfolyo</div>
-          <div class="ch-value">anilg12.github.io</div>
+        <a class="channel" href="https://github.com/anilg12" target="_blank" rel="noreferrer" data-cursor="Open">
+          <div class="ch-label" data-i18n="contact.ch_github">/ GitHub · profil</div>
+          <div class="ch-value">github.com/anilg12</div>
           <svg class="ch-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
         <a class="channel" href="https://www.linkedin.com/in/an%C4%B1l-g%C3%BCl-753417249?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" data-cursor="Open">
