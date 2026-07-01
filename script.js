@@ -19,8 +19,8 @@ const TL_I18N = {
          skills: ["YBS","Python","SQLite","Flet","Yazılım Müh.","BT Altyapısı"],
          badge: "MEZUN" },
     2: { title: "Yazılım",      date: "2023–şimdi",
-         content: "Backend ve full-stack geliştirme. Üniversite sonrası odağım Java, .NET ve mikroservis mimarileri. REST API'ler, veritabanı odaklı uygulamalar ve masaüstü yazılımları kurarım. Aktif GitHub projelerim var.",
-         skills: ["Java",".NET / C#","Python","Mikroservis","REST API","SQL","Git","OOP"],
+         content: "Backend ve full-stack geliştirme. Java, Python ve mikroservis mimarileri üzerine çalışıyorum; aktif GitHub projelerim var.",
+         skills: ["Java","Python","Mikroservis","Git"],
          badge: "DEVAM EDİYOR" },
     3: { title: "Sistem & Op.", date: "2022–şimdi",
          content: "Windows, Linux ve macOS'ta admin seviyesinde sistem yönetimi. Çekirdek mimarisinden sürücü entegrasyonuna ve topolojiye kadar derin tecrübe. NTLite ile özel, hafif Windows imajları üretir; kendi açık kaynaklı işletim sistemlerimi geliştiririm.",
@@ -41,8 +41,8 @@ const TL_I18N = {
          skills: ["MIS","Python","SQLite","Flet","Software Engineering","IT Infrastructure"],
          badge: "GRADUATE" },
     2: { title: "Software Dev", date: "2023–now",
-         content: "Backend and full-stack development. Since graduating my focus is Java, .NET and microservice architectures. I build REST APIs, database-driven apps and desktop software. Active projects on GitHub.",
-         skills: ["Java",".NET / C#","Python","Microservices","REST API","SQL","Git","OOP"],
+         content: "Backend and full-stack development. My focus is Java, Python and microservice architectures — active projects on GitHub.",
+         skills: ["Java","Python","Microservices","Git"],
          badge: "IN PROGRESS" },
     3: { title: "Sys & Ops", date: "2022–now",
          content: "Admin-level system administration on Windows, Linux and macOS. Deep experience from kernel architecture to driver integration and topology. I build custom lightweight Windows images with NTLite and develop my own open-source operating systems.",
@@ -729,15 +729,15 @@ const projects = [
     code: "P-04",
     icon: "os",
     accent: "purple",
-    title: { tr: "Özel Windows İmajı", en: "Custom Windows Image" },
+    title: { tr: "Win10 Featherweight", en: "Win10 Featherweight" },
     meta:  { tr: "NTLite · Sistem", en: "NTLite · Systems" },
     year:  { tr: "2023 — şimdi", en: "2023 — now" },
     status:{ tr: "Aktif", en: "Active" }, statusKind: "active",
     desc:  {
-      tr: "NTLite ile sürücü ve bileşen düzeyinde sadeleştirilmiş, dağıtıma hazır hafif Windows imajları. Gereksiz servislerin temizlenmesi, sürücü entegrasyonu ve gözetimsiz kurulum yapılandırması.",
-      en: "Lightweight, deployment-ready Windows images trimmed at the driver and component level with NTLite — debloating, driver integration and unattended-install configuration."
+      tr: "NTLite ile sürücü ve bileşen düzeyinde sadeleştirilmiş, düşük RAM ayak izli bir Windows 10 imajı. Gereksiz servislerin temizlenmesi, sürücü entegrasyonu ve gözetimsiz kurulum yapılandırmasıyla dağıtıma hazır hale getirildi.",
+      en: "A Windows 10 image trimmed at the driver and component level with NTLite for a low RAM footprint. Debloated services, driver integration and unattended-install configuration make it deployment-ready."
     },
-    tags: ["NTLite", "Windows", "Debloat", "Driver Integration", "Deployment"],
+    tags: ["NTLite", "Windows 10", "Debloat", "Driver Integration", "Deployment"],
     link: { url: "https://github.com/anilg12/Win10NTLiteLog", label: { tr: "GitHub", en: "GitHub" } }
   },
   {
@@ -754,6 +754,21 @@ const projects = [
     },
     tags: ["C#", ".NET", "WPF", "Win32 API", "Registry", "Installer"],
     link: { url: "https://github.com/anilg12/Oblivion-Uninstaller", label: { tr: "GitHub", en: "GitHub" } }
+  },
+  {
+    code: "P-06",
+    icon: "os",
+    accent: "yellow",
+    title: { tr: "Win11 Featherweight Pro", en: "Win11 Featherweight Pro" },
+    meta:  { tr: "NTLite · LTSC 2024", en: "NTLite · LTSC 2024" },
+    year:  { tr: "2026", en: "2026" },
+    status:{ tr: "Aktif", en: "Active" }, statusKind: "active",
+    desc:  {
+      tr: "Windows 11 Enterprise LTSC 2024 (Build 26100) tabanlı, NTLite ile 94 bileşeni kaldırılmış ve telemetrisi kısılmış bir yapılandırma. Boşta RAM kullanımı 1.8 GB'a iniyor; Windows Update ve Güvenlik Duvarı korunduğu için LTSC sayesinde 2034'e kadar güvenlik güncellemesi alıyor. Repo bir ISO dağıtmaz — kendi resmi ISO'nuza uygulayıp aynı sonucu kendiniz üretebileceğiniz doğrulanabilir bir preset.xml içerir.",
+      en: "A configuration based on Windows 11 Enterprise LTSC 2024 (Build 26100), stripped of 94 components and telemetry-reduced with NTLite. Idle RAM usage drops to 1.8 GB, and since Windows Update and the firewall are kept intact, it receives security updates until 2034 thanks to LTSC. The repo doesn't distribute an ISO — it ships a verifiable preset.xml you apply to your own official ISO to reproduce the exact same result yourself."
+    },
+    tags: ["NTLite", "Windows 11", "LTSC 2024", "Debloat", "Reproducible Build"],
+    link: { url: "https://github.com/anilg12/win11-ltsc-lite", label: { tr: "GitHub", en: "GitHub" } }
   }
 ];
 
