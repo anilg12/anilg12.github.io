@@ -685,6 +685,7 @@ function renderCertifications() {
 }
 /* ---------- PROJECTS ARCHIVE ---------- */
 const projectIcons = {
+  signal: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l2.5-7 4 14L14 8l2 4h6"/></svg>`,
   os: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="2" y1="20" x2="22" y2="20"/><line x1="8" y1="16" x2="8" y2="20"/><line x1="16" y1="16" x2="16" y2="20"/></svg>`,
   cpu: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="1"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="5"/><line x1="15" y1="2" x2="15" y2="5"/><line x1="9" y1="19" x2="9" y2="22"/><line x1="15" y1="19" x2="15" y2="22"/><line x1="19" y1="9" x2="22" y2="9"/><line x1="19" y1="15" x2="22" y2="15"/><line x1="2" y1="9" x2="5" y2="9"/><line x1="2" y1="15" x2="5" y2="15"/></svg>`,
   net: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 011-1h12a1 1 0 011 1v3"/><line x1="12" y1="12" x2="12" y2="8"/></svg>`,
@@ -696,6 +697,21 @@ const projectIcons = {
 /* Featured project (OptiStock) lives in the HTML. Add new builds here —
    each entry renders a card in the archive grid automatically. */
 const projects = [
+  {
+    code: "P-01",
+    icon: "signal",
+    accent: "cyan",
+    title: { tr: "SPEKTRA", en: "SPEKTRA" },
+    meta:  { tr: "Java 21 · JavaFX 21", en: "Java 21 · JavaFX 21" },
+    year:  { tr: "2026", en: "2026" },
+    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
+    desc:  {
+      tr: "Elektronik harp (EW) RF spektrum simülatörü — gerçek zamanlı spektrum analizörü ve şelale (waterfall) diyagramı üzerinde, frekans-atlamalı (FHSS) bir taktik telsiği eşzamanlı iki düşman karıştırıcıya (barrage / spot / tarama / takip) karşı çalıştırır. Saf Java fizik çekirdeği sinyal, gürültü ve karışmayı lineer güç düzleminde modelleyip SJNR ve PDR metriklerini sayısal olarak doğrular. jlink + jpackage ile Java gerektirmeyen bağımsız bir Windows kurulumu (MSI) olarak paketlenir.",
+      en: "An electronic-warfare (EW) RF spectrum simulator — over a real-time spectrum analyzer and waterfall display, it pits a frequency-hopping (FHSS) tactical radio against two simultaneous enemy jammers (barrage / spot / sweep / follower). A pure-Java physics core models signal, noise and interference in the linear power domain, numerically validating SJNR and PDR metrics. Packaged via jlink + jpackage as a self-contained Windows installer (MSI) that needs no Java on the target."
+    },
+    tags: ["Java 21", "JavaFX 21", "RF / DSP", "FHSS", "jpackage · MSI", "Simulation"],
+    link: { url: "https://github.com/anilg12/SPEKTRA", label: { tr: "GitHub", en: "GitHub" } }
+  },
   {
     code: "P-02",
     icon: "box",
