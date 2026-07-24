@@ -611,6 +611,102 @@ const certifications = [
     verifiedLabel: { tr: "QR ile doğrulanmış", en: "QR-verified" },
     pdfUrl: "certificates/Certified_Red_Team_Operations_Management_-_Anil_Gul.pdf",
     accent: "red"
+  },
+  {
+    code: "C-08",
+    title: "İleri Java 101",
+    issuer: "Turkcell Akademi · Geleceği Yazanlar",
+    date: { tr: "24 Temmuz 2026", en: "July 24, 2026" },
+    desc: {
+      tr: "Java dilinin ileri seviye temelleri: nesne yönelimli tasarım, kalıtım ve arayüzler, koleksiyon çerçevesi, generic yapılar ve istisna yönetimi. Turkcell Akademi sınavı başarıyla tamamlandı.",
+      en: "Advanced foundations of the Java language: object-oriented design, inheritance and interfaces, the collections framework, generics and exception handling. Turkcell Akademi exam passed."
+    },
+    skills: ["Java", "OOP", "Collections", "Generics", "Interfaces", "Exceptions"],
+    verifyUrl: "https://gelecegiyazanlar.turkcell.com.tr/sertifika/1e941554e6b44eac8f5b1f6029c94b7e",
+    verifiedLabel: { tr: "Turkcell · Doğrulanmış", en: "Turkcell · Verified" },
+    pdfUrl: "certificates/Ileri_Java_101_-_Anil_Gul.pdf",
+    accent: "orange",
+    icon: "java"
+  },
+  {
+    code: "C-09",
+    title: "İleri Java 201",
+    issuer: "Turkcell Akademi · Geleceği Yazanlar",
+    date: { tr: "24 Temmuz 2026", en: "July 24, 2026" },
+    desc: {
+      tr: "Java'da eşzamanlılık ve veri katmanı: thread yönetimi, senkronizasyon, stream API ve lambda ifadeleri, dosya/veritabanı erişimi. İleri Java yolunun ikinci aşaması.",
+      en: "Concurrency and the data layer in Java: thread management, synchronisation, the Stream API and lambda expressions, file and database access. Second stage of the Advanced Java track."
+    },
+    skills: ["Java", "Concurrency", "Threads", "Stream API", "Lambda", "JDBC"],
+    verifyUrl: "https://gelecegiyazanlar.turkcell.com.tr/sertifika/5913179295154614aefd36401fbffeb1",
+    verifiedLabel: { tr: "Turkcell · Doğrulanmış", en: "Turkcell · Verified" },
+    pdfUrl: "certificates/Ileri_Java_201_-_Anil_Gul.pdf",
+    accent: "orange",
+    icon: "java"
+  },
+  {
+    code: "C-10",
+    title: "İleri Java 301",
+    issuer: "Turkcell Akademi · Geleceği Yazanlar",
+    date: { tr: "24 Temmuz 2026", en: "July 24, 2026" },
+    desc: {
+      tr: "Kurumsal Java: katmanlı mimari, bağımlılık enjeksiyonu, ORM ile kalıcılık, REST servisleri ve test edilebilir uygulama tasarımı. İleri Java yolunun son aşaması.",
+      en: "Enterprise Java: layered architecture, dependency injection, ORM-based persistence, REST services and testable application design. Final stage of the Advanced Java track."
+    },
+    skills: ["Java", "Enterprise", "Dependency Injection", "ORM", "REST", "Testing"],
+    verifyUrl: "https://gelecegiyazanlar.turkcell.com.tr/sertifika/38103fd4cd314728aad2e7ce518a06ca",
+    verifiedLabel: { tr: "Turkcell · Doğrulanmış", en: "Turkcell · Verified" },
+    pdfUrl: "certificates/Ileri_Java_301_-_Anil_Gul.pdf",
+    accent: "orange",
+    icon: "java"
+  },
+  {
+    code: "C-11",
+    title: "Sistem Tasarımı ve Gerçek Case Mimarisi",
+    issuer: "Turkcell Akademi · Geleceği Yazanlar",
+    date: { tr: "24 Temmuz 2026", en: "July 24, 2026" },
+    desc: {
+      tr: "Ölçeklenebilir sistem tasarımı: yük dengeleme, önbellekleme katmanları, veri bölümleme, mesaj kuyrukları ve gerçek dünya senaryoları üzerinden mimari karar verme.",
+      en: "Scalable system design: load balancing, caching layers, data partitioning, message queues and architectural decision-making through real-world scenarios."
+    },
+    skills: ["System Design", "Scalability", "Caching", "Load Balancing", "Message Queues", "Architecture"],
+    verifyUrl: "https://gelecegiyazanlar.turkcell.com.tr/sertifika/45a3f3c9b1574dee9591790f581a5f18",
+    verifiedLabel: { tr: "Turkcell · Doğrulanmış", en: "Turkcell · Verified" },
+    pdfUrl: "certificates/Sistem_Tasarimi_ve_Gercek_Case_Mimarisi_-_Anil_Gul.pdf",
+    accent: "cyan",
+    icon: "arch"
+  },
+  {
+    code: "C-12",
+    title: "Blockchain Teknolojileri",
+    issuer: "Turkcell Akademi · Geleceği Yazanlar",
+    date: { tr: "24 Temmuz 2026", en: "July 24, 2026" },
+    desc: {
+      tr: "Dağıtık defter teknolojileri: blok yapısı ve hash zinciri, konsensüs algoritmaları, akıllı sözleşmeler ve merkeziyetsiz uygulama mimarisinin temelleri.",
+      en: "Distributed ledger technologies: block structure and hash chains, consensus algorithms, smart contracts and the fundamentals of decentralised application architecture."
+    },
+    skills: ["Blockchain", "Distributed Ledger", "Consensus", "Smart Contracts", "Hashing", "Decentralization"],
+    verifyUrl: "https://gelecegiyazanlar.turkcell.com.tr/sertifika/0b682b4b41ca420fb26b39ea793cede6",
+    verifiedLabel: { tr: "Turkcell · Doğrulanmış", en: "Turkcell · Verified" },
+    pdfUrl: "certificates/Blockchain_Teknolojileri_-_Anil_Gul.pdf",
+    accent: "magenta",
+    icon: "chain"
+  },
+  {
+    code: "C-13",
+    title: "Yapay Zeka Destekli Backend: Copilot & FastAPI ile API Geliştirme",
+    issuer: "Turkcell Akademi · Geleceği Yazanlar",
+    date: { tr: "23 Temmuz 2026", en: "July 23, 2026" },
+    desc: {
+      tr: "FastAPI ile modern Python backend geliştirme: rota tasarımı, Pydantic ile veri doğrulama, asenkron endpoint'ler ve GitHub Copilot destekli üretken geliştirme akışı.",
+      en: "Modern Python backend development with FastAPI: route design, data validation with Pydantic, asynchronous endpoints and an AI-assisted development workflow with GitHub Copilot."
+    },
+    skills: ["FastAPI", "Python", "REST API", "Pydantic", "Async", "GitHub Copilot"],
+    verifyUrl: "https://gelecegiyazanlar.turkcell.com.tr/sertifika/c7f73c5fa3f344f1beb51f625b6ff134",
+    verifiedLabel: { tr: "Turkcell · Doğrulanmış", en: "Turkcell · Verified" },
+    pdfUrl: "certificates/Yapay_Zeka_Destekli_Backend_-_Anil_Gul.pdf",
+    accent: "green",
+    icon: "ai"
   }
 ];
 
@@ -618,7 +714,12 @@ const certIcons = {
   blue: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="7" cy="14" r="1"/><line x1="11" y1="14" x2="17" y2="14"/></svg>`,
   purple: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
   yellow: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
-  red: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>`
+  red: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>`,
+  /* topic icons — selected via the optional `icon` field on a certificate */
+  java: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11v4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M15 11h2a2 2 0 0 1 0 4h-2"/><path d="M9 3c-1 1.2-1 2.2 0 3.2"/><path d="M12.5 3.5c-.8 1-.8 1.8 0 2.6"/><line x1="4" y1="21" x2="17" y2="21"/></svg>`,
+  arch: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 7 12 12 2 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg>`,
+  chain: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/><line x1="8" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="16" y2="12"/></svg>`,
+  ai: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10.5l1 1.5-1 1.5"/><line x1="13" y1="13.5" x2="15" y2="13.5"/><line x1="10" y1="2" x2="10" y2="6"/><line x1="14" y1="2" x2="14" y2="6"/><line x1="10" y1="18" x2="10" y2="22"/><line x1="14" y1="18" x2="14" y2="22"/><line x1="18" y1="10" x2="22" y2="10"/><line x1="18" y1="14" x2="22" y2="14"/><line x1="2" y1="10" x2="6" y2="10"/><line x1="2" y1="14" x2="6" y2="14"/></svg>`
 };
 
 function renderCertifications() {
@@ -665,7 +766,7 @@ function renderCertifications() {
             <span class="cert-code">${c.code}</span>
             ${statusBadge}
           </div>
-          <div class="cert-icon">${certIcons[c.accent] || certIcons.blue}</div>
+          <div class="cert-icon">${certIcons[c.icon] || certIcons[c.accent] || certIcons.blue}</div>
         </header>
 
         <div class="cert-body">
