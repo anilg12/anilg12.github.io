@@ -707,6 +707,22 @@ const certifications = [
     pdfUrl: "certificates/Yapay_Zeka_Destekli_Backend_-_Anil_Gul.pdf",
     accent: "green",
     icon: "ai"
+  },
+  {
+    code: "C-14",
+    title: "Prompt Mühendisliği",
+    issuer: "Turkcell Akademi · Geleceği Yazanlar",
+    date: { tr: "24 Temmuz 2026", en: "July 24, 2026" },
+    desc: {
+      tr: "Büyük dil modelleriyle etkili çalışma: prompt tasarım kalıpları, bağlam yönetimi, rol ve örnek tabanlı yönlendirme, zincirleme akıl yürütme ve çıktı kalitesinin ölçülüp iyileştirilmesi.",
+      en: "Working effectively with large language models: prompt design patterns, context management, role- and example-based steering, chained reasoning, and measuring and improving output quality."
+    },
+    skills: ["Prompt Design", "LLM", "Context Handling", "Few-Shot", "Chain of Thought", "Output Tuning"],
+    verifyUrl: "https://gelecegiyazanlar.turkcell.com.tr/sertifika/deeff392de824f6a91dda356a3f8f4ba",
+    verifiedLabel: { tr: "Turkcell · Doğrulanmış", en: "Turkcell · Verified" },
+    pdfUrl: "certificates/Prompt_Muhendisligi_-_Anil_Gul.pdf",
+    accent: "lime",
+    icon: "prompt"
   }
 ];
 
@@ -719,7 +735,8 @@ const certIcons = {
   java: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11v4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M15 11h2a2 2 0 0 1 0 4h-2"/><path d="M9 3c-1 1.2-1 2.2 0 3.2"/><path d="M12.5 3.5c-.8 1-.8 1.8 0 2.6"/><line x1="4" y1="21" x2="17" y2="21"/></svg>`,
   arch: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 7 12 12 2 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg>`,
   chain: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/><line x1="8" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="16" y2="12"/></svg>`,
-  ai: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10.5l1 1.5-1 1.5"/><line x1="13" y1="13.5" x2="15" y2="13.5"/><line x1="10" y1="2" x2="10" y2="6"/><line x1="14" y1="2" x2="14" y2="6"/><line x1="10" y1="18" x2="10" y2="22"/><line x1="14" y1="18" x2="14" y2="22"/><line x1="18" y1="10" x2="22" y2="10"/><line x1="18" y1="14" x2="22" y2="14"/><line x1="2" y1="10" x2="6" y2="10"/><line x1="2" y1="14" x2="6" y2="14"/></svg>`
+  ai: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 10.5l1 1.5-1 1.5"/><line x1="13" y1="13.5" x2="15" y2="13.5"/><line x1="10" y1="2" x2="10" y2="6"/><line x1="14" y1="2" x2="14" y2="6"/><line x1="10" y1="18" x2="10" y2="22"/><line x1="14" y1="18" x2="14" y2="22"/><line x1="18" y1="10" x2="22" y2="10"/><line x1="18" y1="14" x2="22" y2="14"/><line x1="2" y1="10" x2="6" y2="10"/><line x1="2" y1="14" x2="6" y2="14"/></svg>`,
+  prompt: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><polyline points="8 8 10.5 10.5 8 13"/><line x1="12.5" y1="13" x2="16" y2="13"/></svg>`
 };
 
 function renderCertifications() {

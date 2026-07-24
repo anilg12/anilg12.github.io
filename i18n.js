@@ -68,7 +68,7 @@ const TRANSLATIONS = {
     "proj.chart_label": "↓ temizlendi",
 
     "cert.head": "Doğrulanmış Sertifikalar",
-    "cert.head_meta": "13 sertifika · 11 doğrulanabilir",
+    "cert.head_meta": "14 sertifika · 12 doğrulanabilir",
     "cert.title_html": "<em>Doğrulanmış</em> kimlik bilgileri ve sertifikalar.",
     "cert.body": "Her sertifika kaynağında doğrulanabilir veya PDF kopyası indirilebilir. Cisco Networking Academy, JS Institute, Turkcell Akademi ve Red Team Leaders tarafından verildi.",
     "cert.legend.verified": "Kaynağında doğrulanabilir",
@@ -158,7 +158,7 @@ const TRANSLATIONS = {
     "proj.chart_label": "↓ cleaned",
 
     "cert.head": "Verified Certifications",
-    "cert.head_meta": "13 certificates · 11 verifiable",
+    "cert.head_meta": "14 certificates · 12 verifiable",
     "cert.title_html": "<em>Verified</em> credentials & certificates.",
     "cert.body": "Each certificate can be verified at its source or downloaded as a PDF copy. Issued by Cisco Networking Academy, JS Institute, Turkcell Akademi and Red Team Leaders.",
     "cert.legend.verified": "Verifiable at source",
