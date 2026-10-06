@@ -93,15 +93,21 @@ const capabilities = [
     { name: "Java",         level: "primary" },
     { name: "Python",       level: "primary" },
     { name: "C# / .NET",    level: "working" },
+    { name: "JavaScript / TypeScript", level: "working" },
+    { name: "Swift",        level: "working" },
     { name: "SQL",          level: "primary" }
   ]},
   { catKey: "cap.cat.frameworks", items: [
+    { name: "JavaFX",       level: "primary" },
+    { name: "WPF",          level: "working" },
+    { name: "SwiftUI",      level: "working" },
+    { name: "Electron",     level: "working" },
+    { name: "Svelte",       level: "working" },
     { name: "Flet",         level: "primary" },
-    { name: "REST API",     level: "primary" },
-    { name: "Microservices", level: "working" },
+    { name: "tkinter",      level: "primary" },
     { name: "SQLite",       level: "primary" },
-    { name: "OOP",          level: "primary" },
-    { name: "Git",          level: "primary" }
+    { name: "REST API",     level: "primary" },
+    { name: "Microservices", level: "working" }
   ]},
   { catKey: "cap.cat.systems", items: [
     { name: "Windows",               level: "primary" },
@@ -119,6 +125,15 @@ const capabilities = [
     { name: "IP Addressing",        level: "cert" },
     { name: "Network Topology",     level: "cert" },
     { name: "Network Security",     level: "working" }
+  ]},
+  { catKey: "cap.cat.tools", items: [
+    { name: "OOP",                  level: "primary" },
+    { name: "Git",                  level: "primary" },
+    { name: "GitHub Actions (CI/CD)", level: "working" },
+    { name: "Unit & E2E Testing",   level: "working" },
+    { name: "Installer Packaging",  level: "working" },
+    { name: "Vite",                 level: "working" },
+    { name: "Maven",                level: "working" }
   ]}
 ];
 
