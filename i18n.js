@@ -32,7 +32,7 @@ const TRANSLATIONS = {
     "cap.legend.primary": "Birincil yetkinlik",
     "cap.legend.working": "Çalışma seviyesinde",
     "cap.legend.cert": "Sertifikalı",
-    "cap.head_meta": "4 alan · 23 yetkinlik",
+    "cap.head_meta": "5 alan · 36 yetkinlik",
 
     "orbit.head": "Radyal Yörünge Zaman Çizelgesi",
     "orbit.head_meta": "Etkileşimli · Tıklayarak gez",
@@ -136,7 +136,7 @@ const TRANSLATIONS = {
     "cap.legend.primary": "Primary skill",
     "cap.legend.working": "Working knowledge",
     "cap.legend.cert": "Certified",
-    "cap.head_meta": "4 areas · 23 skills",
+    "cap.head_meta": "5 areas · 36 skills",
 
     "orbit.head": "Radial Orbital Timeline",
     "orbit.head_meta": "Interactive · Click to explore",
