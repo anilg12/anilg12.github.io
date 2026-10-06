@@ -15,7 +15,7 @@ const icons = {
 const TL_I18N = {
   tr: {
     1: { title: "Eğitim",       date: "2022–2026",
-         content: "Kapadokya Üniversitesi, Yönetim Bilişim Sistemleri mezunu. Yazılım, veritabanı ve BT Mühendislik seviyesinde donanım ve sistem bilgisi. OptiStock dahil; Java-odak menajeri uygulamasından Python, Flet ve SQLite ile yazılmış tam-yığın masaüstü & web projeleri.",
+         content: "Kapadokya Üniversitesi, Yönetim Bilişim Sistemleri mezunu. Yazılım, veritabanı ve BT Mühendislik seviyesinde donanım ve sistem bilgisi. Bitirme projesi StockFlow dahil; Java ile yazılan Odak Menajeri'nden (bugün Emberwise) Python, Flet ve SQLite ile yazılmış masaüstü & web projelerine uzanan çalışmalar.",
          skills: ["YBS","Python","SQLite","Flet","Yazılım Müh.","BT Altyapısı"],
          badge: "MEZUN" },
     2: { title: "Yazılım",      date: "2023–şimdi",
@@ -37,7 +37,7 @@ const TL_I18N = {
   },
   en: {
     1: { title: "Education", date: "2022–2026",
-         content: "Kapadokya University, Management Information Systems graduate. Engineering-level hardware and system knowledge across software, databases and IT. Full-stack desktop & web projects including OptiStock — from a Java-focused manager app to apps built with Python, Flet and SQLite.",
+         content: "Kapadokya University, Management Information Systems graduate. Engineering-level hardware and system knowledge across software, databases and IT. Desktop & web projects including my StockFlow capstone — from the Java-built Focus Manager (today's Emberwise) to apps built with Python, Flet and SQLite.",
          skills: ["MIS","Python","SQLite","Flet","Software Engineering","IT Infrastructure"],
          badge: "GRADUATE" },
     2: { title: "Software Dev", date: "2023–now",
@@ -809,14 +809,58 @@ const projectIcons = {
   net: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 011-1h12a1 1 0 011 1v3"/><line x1="12" y1="12" x2="12" y2="8"/></svg>`,
   api: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
   game: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="3"/></svg>`,
-  box: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`
+  box: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+  flame: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`
 };
 
-/* Featured project (OptiStock) lives in the HTML. Add new builds here —
+const linkIcons = {
+  open: `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>`,
+  download: `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`
+};
+const LABEL_GITHUB = { tr: "GitHub", en: "GitHub" };
+const LABEL_DOWNLOAD = { tr: "İndir", en: "Download" };
+
+/* Featured case studies (Emberwise, Oblivion) live in the HTML. Add new builds here —
    each entry renders a card in the archive grid automatically. */
 const projects = [
   {
     code: "P-01",
+    icon: "flame",
+    accent: "orange",
+    title: { tr: "Emberwise", en: "Emberwise" },
+    meta:  { tr: "Electron · Svelte 5 · TypeScript", en: "Electron · Svelte 5 · TypeScript" },
+    year:  { tr: "2026", en: "2026" },
+    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
+    desc:  {
+      tr: "Görevleri maceraya, odaklanılan her dakikayı XP'ye çeviren sıcak bir odak RPG'si — JavaFX ile yazdığım Odak Menajeri RPG'nin baştan yazılmış hâli. Pomodoro odak ateşi, elle çizilmiş 19 karakter ve gardırop, bir yıla yayılan giriş ödülleri, gerçek saha kayıtlarından ortam sesi karıştırıcı ve 400'e yakın özgün söz. Windows ve macOS'ta tamamen çevrimdışı çalışır; hesap, reklam ve takip yok.",
+      en: "A cozy focus RPG that turns tasks into quests and every focused minute into XP — a ground-up rewrite of my JavaFX Focus Manager RPG. A Pomodoro focus flame, 19 hand-drawn characters with a wardrobe, a year-long login reward path, an ambience mixer built from real field recordings and close to 400 original lines. Fully offline on Windows and macOS: no account, no ads, no tracking."
+    },
+    tags: ["Electron", "Svelte 5", "TypeScript", "Vite", "Web Audio API", "Gamification"],
+    links: [
+      { url: "https://github.com/anilg12/Emberwise", label: LABEL_GITHUB },
+      { url: "https://github.com/anilg12/Emberwise/releases/latest", label: LABEL_DOWNLOAD, kind: "download" }
+    ]
+  },
+  {
+    code: "P-02",
+    icon: "cpu",
+    accent: "blue",
+    title: { tr: "Oblivion Uninstaller", en: "Oblivion Uninstaller" },
+    meta:  { tr: "C# · WPF · SwiftUI", en: "C# · WPF · SwiftUI" },
+    year:  { tr: "2026", en: "2026" },
+    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
+    desc:  {
+      tr: "Windows ve macOS için modern bir sistem bakım aracı — programları iz bırakmadan kaldırır, kayıt defteri ve dosya sistemindeki kalıntıları bulunma nedeni ve güven seviyesiyle listeler. \"Avcı Modu\" ile hedef pencerenin üzerine sürükleyip kaynak uygulamayı bulur; canlı sistem izleyici, gereksiz dosya temizleyici, başlangıç yöneticisi, kurulum izleyici ve dosya parçalayıcıyı tek çatı altında toplar. Hiçbir şeyi kendiliğinden seçmez, her silmeden önce tam listeyle onay ister.",
+      en: "A modern system-maintenance tool for Windows and macOS — it removes programs without a trace, listing every registry and file-system leftover with the reason it was found and a confidence level. \"Hunter Mode\" finds an app by dragging onto its window; a live system monitor, junk cleaner, startup manager, install monitor and file shredder live under one roof. Nothing is ever pre-selected, and every deletion is confirmed with the full list first."
+    },
+    tags: ["C#", ".NET 8", "WPF", "SwiftUI", "Win32 API", "Registry"],
+    links: [
+      { url: "https://github.com/anilg12/Oblivion-Uninstaller", label: LABEL_GITHUB },
+      { url: "https://github.com/anilg12/Oblivion-Uninstaller/releases/latest", label: LABEL_DOWNLOAD, kind: "download" }
+    ]
+  },
+  {
+    code: "P-03",
     icon: "signal",
     accent: "cyan",
     title: { tr: "SPEKTRA", en: "SPEKTRA" },
@@ -828,69 +872,30 @@ const projects = [
       en: "An electronic-warfare (EW) RF spectrum simulator — over a real-time spectrum analyzer and waterfall display, it pits a frequency-hopping (FHSS) tactical radio against two simultaneous enemy jammers (barrage / spot / sweep / follower). A pure-Java physics core models signal, noise and interference in the linear power domain, numerically validating SJNR and PDR metrics. Packaged via jlink + jpackage as a self-contained Windows installer (MSI) that needs no Java on the target."
     },
     tags: ["Java 21", "JavaFX 21", "RF / DSP", "FHSS", "jpackage · MSI", "Simulation"],
-    link: { url: "https://github.com/anilg12/SPEKTRA", label: { tr: "GitHub", en: "GitHub" } }
-  },
-  {
-    code: "P-02",
-    icon: "box",
-    accent: "green",
-    title: { tr: "StockFlow", en: "StockFlow" },
-    meta:  { tr: "Python · Flet", en: "Python · Flet" },
-    year:  { tr: "2026", en: "2026" },
-    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
-    desc:  {
-      tr: "Tam-yığın bir stok motoru — önce masaüstü olarak inşa edildi, sonra web'e açıldı. Bir Flet masaüstü istemcisi, yerel bir SQLite veritabanı ve temiz bir Python servis katmanı; yerli hissetmek, çevrimdışı çalışmak ve okunabilir kalmak üzere tasarlandı.",
-      en: "A full-stack inventory engine — built desktop-first, then unfolded to web. A Flet desktop client, a local SQLite store and a clean Python service layer; designed to feel native, run offline and stay readable."
-    },
-    tags: ["Python", "Flet", "SQLite", "Desktop GUI", "Inventory Logic"],
-    link: { url: "https://github.com/anilg12/StockFlow", label: { tr: "GitHub", en: "GitHub" } }
-  },
-  {
-    code: "P-03",
-    accent: "red",
-    title: { tr: "Odak Menajeri RPG", en: "Focus Manager RPG" },
-    meta:  { tr: "Java · JavaFX", en: "Java · JavaFX" },
-    year:  { tr: "Beta sürüm", en: "Beta release" },
-    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
-    desc:  {
-      tr: "Görev ve zaman yönetimini oyunlaştıran, tamamen Java & JavaFX ile yazılmış masaüstü RPG uygulaması. Karakter seçimi, ders/hedef tanımı ve hatırlatıcılarla; tamamlanan görevlerden XP kazanılır, seviye ve rütbeler (Acemi → Çalışkan → Usta) açılır.",
-      en: "A desktop RPG — built entirely in Java & JavaFX — that gamifies task and time management. Pick a character, define lessons, goals and reminders; completed tasks earn XP and unlock levels and ranks (Novice → Diligent → Master)."
-    },
-    tags: ["Java", "JavaFX", "OOP", "Gamification", "Timer API", "Desktop GUI"],
-    link: { url: "https://github.com/anilg12/Odak-Menajeri-RPG", label: { tr: "GitHub", en: "GitHub" } }
+    links: [
+      { url: "https://github.com/anilg12/Spektra", label: LABEL_GITHUB },
+      { url: "https://github.com/anilg12/Spektra/releases/latest", label: LABEL_DOWNLOAD, kind: "download" }
+    ]
   },
   {
     code: "P-04",
-    icon: "os",
-    accent: "purple",
-    title: { tr: "RoseOS 10", en: "RoseOS 10" },
-    meta:  { tr: "NTLite · Sistem", en: "NTLite · Systems" },
-    year:  { tr: "2023 — şimdi", en: "2023 — now" },
-    status:{ tr: "Aktif", en: "Active" }, statusKind: "active",
+    icon: "box",
+    accent: "green",
+    title: { tr: "StockFlow", en: "StockFlow" },
+    meta:  { tr: "Python · tkinter · SQLite", en: "Python · tkinter · SQLite" },
+    year:  { tr: "2025", en: "2025" },
+    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
     desc:  {
-      tr: "NTLite ile sürücü ve bileşen düzeyinde sadeleştirilmiş, düşük RAM ayak izli bir Windows 10 imajı. Gereksiz servislerin temizlenmesi, sürücü entegrasyonu ve gözetimsiz kurulum yapılandırmasıyla dağıtıma hazır hale getirildi.",
-      en: "A Windows 10 image trimmed at the driver and component level with NTLite for a low RAM footprint. Debloated services, driver integration and unattended-install configuration make it deployment-ready."
+      tr: "Küçük ve orta ölçekli işletmeler için stok takibi ve müşteri ilişkileri yönetimi — Kapadokya Üniversitesi bitirme projem. Ürün kartları, satış fişleri, cari bakiye, görüşme geçmişi ve CSV çıktılı altı rapor tek pencerede. Yalnızca Python standart kütüphanesiyle yazıldı: tkinter arayüz, SQLite veri katmanı, PBKDF2 ile parola saklama ve elle çizilmiş grafikler; pip install gerektirmez, Python olan her makinede çift tıkla açılır.",
+      en: "Inventory and customer-relationship management for small and mid-sized businesses — my capstone project at Kapadokya University. Product cards, sales receipts, customer balances, contact history and six CSV-exportable reports in one window. Built with the Python standard library alone: a tkinter UI, an SQLite data layer, PBKDF2 password hashing and hand-drawn charts — no pip install, it opens with a double-click on any machine with Python."
     },
-    tags: ["NTLite", "Windows 10", "Debloat", "Driver Integration", "Deployment"],
-    link: { url: "https://github.com/anilg12/Win10NTLiteLog", label: { tr: "GitHub", en: "GitHub" } }
+    tags: ["Python", "tkinter", "SQLite", "CRM", "Zero Dependencies", "Desktop GUI"],
+    links: [
+      { url: "https://github.com/anilg12/StockFlow", label: LABEL_GITHUB }
+    ]
   },
   {
     code: "P-05",
-    icon: "cpu",
-    accent: "blue",
-    title: { tr: "Oblivion Uninstaller", en: "Oblivion Uninstaller" },
-    meta:  { tr: "C# · WPF", en: "C# · WPF" },
-    year:  { tr: "2026", en: "2026" },
-    status:{ tr: "Yayında", en: "Released" }, statusKind: "active",
-    desc:  {
-      tr: "Windows için modern bir sistem bakım aracı — \"Avcı Modu\" ile hedef pencerenin üzerine sürükleyip kaynak uygulamayı bulur, registry ve dosya sistemindeki kalıntıları temizler. Gereksiz dosya temizleyici, başlangıç yöneticisi, bloatware kaldırıcı ve tarayıcı eklenti yöneticisini tek çatı altında toplar; her işlem öncesi otomatik geri yükleme noktası oluşturur.",
-      en: "A modern Windows system-maintenance tool — \"Hunter Mode\" lets you drag onto any window to find and remove its source app, clearing out registry and filesystem residue. Bundles a junk-file cleaner, startup manager, bloatware remover and browser-extension manager, with an automatic restore point before every operation."
-    },
-    tags: ["C#", ".NET", "WPF", "Win32 API", "Registry", "Installer"],
-    link: { url: "https://github.com/anilg12/Oblivion-Uninstaller", label: { tr: "GitHub", en: "GitHub" } }
-  },
-  {
-    code: "P-06",
     icon: "os",
     accent: "yellow",
     title: { tr: "RoseOS 11 Pro", en: "RoseOS 11 Pro" },
@@ -902,7 +907,26 @@ const projects = [
       en: "A configuration based on Windows 11 Enterprise LTSC 2024 (Build 26100), stripped of 94 components and telemetry-reduced with NTLite. Idle RAM usage drops to 1.8 GB, and since Windows Update and the firewall are kept intact, it receives security updates until 2034 thanks to LTSC. The repo doesn't distribute an ISO — it ships a verifiable preset.xml you apply to your own official ISO to reproduce the exact same result yourself."
     },
     tags: ["NTLite", "Windows 11", "LTSC 2024", "Debloat", "Reproducible Build"],
-    link: { url: "https://github.com/anilg12/win11-ltsc-lite", label: { tr: "GitHub", en: "GitHub" } }
+    links: [
+      { url: "https://github.com/anilg12/win11-ltsc-lite", label: LABEL_GITHUB }
+    ]
+  },
+  {
+    code: "P-06",
+    icon: "os",
+    accent: "purple",
+    title: { tr: "RoseOS 10", en: "RoseOS 10" },
+    meta:  { tr: "NTLite · Sistem", en: "NTLite · Systems" },
+    year:  { tr: "2023 — şimdi", en: "2023 — now" },
+    status:{ tr: "Aktif", en: "Active" }, statusKind: "active",
+    desc:  {
+      tr: "NTLite ile sürücü ve bileşen düzeyinde sadeleştirilmiş, düşük RAM ayak izli bir Windows 10 imajı. Gereksiz servislerin temizlenmesi, sürücü entegrasyonu ve gözetimsiz kurulum yapılandırmasıyla dağıtıma hazır hale getirildi.",
+      en: "A Windows 10 image trimmed at the driver and component level with NTLite for a low RAM footprint. Debloated services, driver integration and unattended-install configuration make it deployment-ready."
+    },
+    tags: ["NTLite", "Windows 10", "Debloat", "Driver Integration", "Deployment"],
+    links: [
+      { url: "https://github.com/anilg12/Win10NTLiteLog", label: LABEL_GITHUB }
+    ]
   }
 ];
 
@@ -915,8 +939,17 @@ function renderProjects() {
     const statusCls = p.statusKind === "active" ? "proj-status-active"
                     : p.statusKind === "progress" ? "proj-status-progress"
                     : "proj-status-done";
+    const links = p.links || (p.link ? [p.link] : []);
+    const linkLabel = l => l.label[lang] || l.label.en;
+    const linksHtml = links.map(l => {
+      const label = linkLabel(l);
+      const inner = l.kind === "download"
+        ? `${linkIcons.download}<span>${label}</span>`
+        : `<span>${label}</span>${linkIcons.open}`;
+      return `<a class="cert-btn cert-btn-pdf" href="${l.url}" target="_blank" rel="noreferrer" data-cursor="${label}">${inner}</a>`;
+    }).join("");
     return `
-      <article class="proj-card cert-accent-${p.accent}" data-cursor="${(p.link.label[lang] || p.link.label.en)}">
+      <article class="proj-card cert-accent-${p.accent}" data-cursor="${links.length ? linkLabel(links[0]) : ""}">
         <span class="card-corner tl"></span><span class="card-corner tr"></span>
         <span class="card-corner bl"></span><span class="card-corner br"></span>
 
@@ -936,13 +969,147 @@ function renderProjects() {
         </div>
 
         <footer class="proj-card-foot">
-          <a class="cert-btn cert-btn-pdf" href="${p.link.url}" target="_blank" rel="noreferrer" data-cursor="${(p.link.label[lang] || p.link.label.en)}">
-            <span>${p.link.label[lang] || p.link.label.en}</span>
-            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
+          ${linksHtml}
         </footer>
       </article>`;
   }).join("");
+}
+
+/* ---------- EMBERWISE SHOWCASE — real footage recorded from the app ---------- */
+/* Five short clips (TR + EN) play back to back while the window is on screen;
+   the scene tabs double as progress bars and let visitors jump between clips. */
+const EW_SCENES = ["quest", "focus", "hero", "rewards", "sounds"];
+let emberwiseShowcase = null;
+
+function initEmberwiseShowcase() {
+  const root = document.getElementById("ewShowcase");
+  if (!root) return;
+  const video = root.querySelector(".ew-video");
+  const toggle = root.querySelector(".ew-toggle");
+  const tabs = [...root.querySelectorAll(".ew-scene")];
+  const fills = tabs.map(t => t.querySelector(".ew-scene-fill"));
+  let lang = (typeof currentLang !== "undefined" && currentLang === "en") ? "en" : "tr";
+  // Plays like the rest of the site's motion; the pause button / a click on the video stops it.
+  let idx = 0, loaded = false, inView = false, paused = false, raf = 0, swapTimer = 0, fadeTimer = 0;
+
+  video.muted = true;
+  const src = (i, ext) => `media/emberwise/${lang}/${EW_SCENES[i]}.${ext}`;
+
+  // decorative embers rising behind the window — most of them in the gutters so they stay visible
+  const embers = document.createElement("div");
+  embers.className = "ew-embers";
+  embers.setAttribute("aria-hidden", "true");
+  for (let i = 0; i < 16; i++) {
+    const e = document.createElement("span");
+    const edge = i % 5 !== 4;
+    const x = edge ? (i % 2 ? 1 + Math.random() * 6 : 93 + Math.random() * 6) : 8 + Math.random() * 84;
+    e.style.setProperty("--x", x.toFixed(1) + "%");
+    e.style.setProperty("--s", (2 + Math.random() * 2.6).toFixed(1) + "px");
+    e.style.setProperty("--d", (6 + Math.random() * 6).toFixed(2) + "s");
+    e.style.setProperty("--delay", (-Math.random() * 12).toFixed(2) + "s");
+    e.style.setProperty("--drift", Math.round((Math.random() - 0.5) * 50) + "px");
+    embers.appendChild(e);
+  }
+  root.parentNode.insertBefore(embers, root);
+  const text = (key, fallback) => (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || fallback;
+
+  function paintTabs() {
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle("active", i === idx);
+      tab.classList.toggle("done", i < idx);
+      tab.setAttribute("aria-selected", i === idx ? "true" : "false");
+      fills[i].style.width = "";
+    });
+  }
+  function paintToggle() {
+    root.classList.toggle("is-paused", paused);
+    toggle.setAttribute("aria-label", paused ? text("proj.ew.play", "Oynat") : text("proj.ew.pause", "Duraklat"));
+  }
+  function tick() {
+    if (video.duration) fills[idx].style.width = Math.min(100, (video.currentTime / video.duration) * 100) + "%";
+    raf = requestAnimationFrame(tick);
+  }
+  function tryPlay() {
+    if (paused || !inView || !loaded || document.hidden) return;
+    const p = video.play();
+    if (p && p.catch) p.catch(() => {});
+  }
+  function show(i, fade = true) {
+    idx = i;
+    loaded = true;
+    paintTabs();
+    clearTimeout(swapTimer);
+    clearTimeout(fadeTimer);
+    const swap = () => {
+      video.poster = src(idx, "webp");
+      video.src = src(idx, "mp4");
+      if (paused) video.classList.remove("is-swapping");
+      tryPlay();
+    };
+    if (fade && !paused) {
+      video.classList.add("is-swapping");
+      swapTimer = setTimeout(swap, 220);
+      // never leave the screen blank if the next clip is slow to start
+      fadeTimer = setTimeout(() => video.classList.remove("is-swapping"), 1600);
+    } else {
+      video.classList.remove("is-swapping");
+      swap();
+    }
+  }
+  function setPaused(v) {
+    paused = v;
+    paintToggle();
+    if (paused) video.pause();
+    else if (!loaded) show(idx, false);
+    else tryPlay();
+  }
+
+  video.addEventListener("playing", () => {
+    video.classList.remove("is-swapping");
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(tick);
+  });
+  video.addEventListener("pause", () => cancelAnimationFrame(raf));
+  video.addEventListener("ended", () => show((idx + 1) % EW_SCENES.length));
+  video.addEventListener("error", () => video.classList.remove("is-swapping"));
+  video.addEventListener("click", () => setPaused(!paused));
+  toggle.addEventListener("click", () => setPaused(!paused));
+  tabs.forEach((tab, i) => tab.addEventListener("click", () => {
+    paused = false;
+    paintToggle();
+    show(i);
+  }));
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) video.pause(); else tryPlay();
+  });
+
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      inView = e.isIntersecting;
+      if (!inView) video.pause();
+      else if (!loaded && !paused) show(idx, false);
+      else tryPlay();
+    });
+  }, { threshold: 0.35 }).observe(root);
+
+  if (lang !== "tr") video.poster = src(idx, "webp");
+  paintToggle();
+
+  emberwiseShowcase = {
+    setLang(next) {
+      next = next === "en" ? "en" : "tr";
+      if (next !== lang) {
+        lang = next;
+        if (loaded) show(idx, false);
+        else video.poster = src(idx, "webp");
+      }
+      paintToggle();
+    }
+  };
+}
+
+function refreshEmberwiseShowcase() {
+  if (emberwiseShowcase) emberwiseShowcase.setLang(typeof currentLang !== "undefined" ? currentLang : "tr");
 }
 
 function renderTech() {
@@ -1132,6 +1299,7 @@ window.addEventListener("DOMContentLoaded", () => {
   renderCapabilities();
   renderCertifications();
   renderProjects();
+  initEmberwiseShowcase();
   renderChart();
   initScroll();
   initClock();

@@ -290,16 +290,83 @@
 </section>
 
 <!-- ============================================
-     PROJECT — OPTISTOCK
+     PROJECTS — FEATURED CASE STUDIES + ARCHIVE
      ============================================ -->
 <section id="project-section">
   <div class="section-head">
     <span class="num">/06</span><span data-i18n="proj.head">Seçili Çalışmalar</span><span class="line"></span><span data-i18n="proj.head_meta">Öne çıkan + proje arşivi</span>
   </div>
 
-  <div class="proj-featured-tag" data-reveal data-i18n="proj.featured">/ Öne çıkan çalışma</div>
+  <div class="proj-featured-tag" data-reveal data-i18n="proj.featured">/ Öne çıkan çalışmalar</div>
 
+  <!-- CASE STUDY 01 — EMBERWISE (real footage recorded from the app) -->
   <div class="project-wrap">
+
+    <div class="project-art project-art-media" data-reveal>
+      <div class="project-art-grid"></div>
+      <div class="ew-glow" aria-hidden="true"></div>
+      <div class="project-art-window ew-window" id="ewShowcase">
+        <div class="win-titlebar">
+          <span class="tb-dot"></span><span class="tb-dot"></span><span class="tb-dot"></span>
+          <span class="win-title">emberwise — focus rpg</span>
+          <span class="ew-live"><span class="ew-live-dot"></span><span data-i18n="proj.ew.live">Uygulamadan kayıt</span></span>
+        </div>
+        <div class="ew-screen">
+          <video class="ew-video" muted playsinline disablepictureinpicture preload="none" poster="media/emberwise/tr/quest.webp" aria-label="Emberwise"></video>
+          <button class="ew-toggle" type="button" aria-label="Duraklat" data-cursor="Pause">
+            <svg class="ew-ic-pause" viewBox="0 0 24 24"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg>
+            <svg class="ew-ic-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <div class="ew-scenes" role="tablist" aria-label="Emberwise">
+          <button class="ew-scene active" type="button" role="tab" aria-selected="true"><span class="ew-scene-label" data-i18n="proj.ew.scene1">Görevler</span><span class="ew-scene-track"><span class="ew-scene-fill"></span></span></button>
+          <button class="ew-scene" type="button" role="tab" aria-selected="false"><span class="ew-scene-label" data-i18n="proj.ew.scene2">Odak</span><span class="ew-scene-track"><span class="ew-scene-fill"></span></span></button>
+          <button class="ew-scene" type="button" role="tab" aria-selected="false"><span class="ew-scene-label" data-i18n="proj.ew.scene3">Kahraman</span><span class="ew-scene-track"><span class="ew-scene-fill"></span></span></button>
+          <button class="ew-scene" type="button" role="tab" aria-selected="false"><span class="ew-scene-label" data-i18n="proj.ew.scene4">Ödüller</span><span class="ew-scene-track"><span class="ew-scene-fill"></span></span></button>
+          <button class="ew-scene" type="button" role="tab" aria-selected="false"><span class="ew-scene-label" data-i18n="proj.ew.scene5">Sesler</span><span class="ew-scene-track"><span class="ew-scene-fill"></span></span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-info">
+      <div class="eyebrow" data-i18n="proj.ew.eyebrow">/ Vaka Çalışması 01</div>
+      <h3>Emberwise.</h3>
+      <p class="tagline" data-i18n="proj.ew.tagline">Görevlerini maceraya, odaklandığın her dakikayı XP'ye çeviren sıcak bir odak RPG'si &mdash; Windows ve macOS için.</p>
+      <p class="desc" data-i18n="proj.ew.desc">JavaFX ile yazdığım Odak Menajeri RPG'nin Electron, Svelte 5 ve TypeScript ile baştan aşağı yeniden yazılmış hâli. Görev ekler, amacını yazarsın; bitirdikçe ve odaklandıkça XP ve altın kazanır, kahramanını büyütür, Acemi'den Ölümsüz'e rütbe atlarsın. Pomodoro odak ateşi, elle çizilmiş 19 karakter ve gardırop, bir yıla yayılan giriş ödülleri, gerçek saha kayıtlarından ortam sesi karıştırıcı ve 400'e yakın özgün söz. Tamamen çevrimdışı: hesap, reklam ve takip yok.</p>
+
+      <div class="project-meta">
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.role">Rol</div><div class="pm-val" data-i18n="proj.role_v">Tek başına geliştirme</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.year">Yıl</div><div class="pm-val">2026</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.scope">Kapsam</div><div class="pm-val" data-i18n="proj.scope_v">Windows · macOS</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.stack">Yığın</div><div class="pm-val">Electron / Svelte</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.data">Veri</div><div class="pm-val" data-i18n="proj.ew.data_v">Yerel · çevrimdışı</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.status">Durum</div><div class="pm-val" data-i18n="proj.ew.status_v">v1.1 · yayında</div></div>
+      </div>
+
+      <div class="project-tags">
+        <span class="skill-tag">Electron</span>
+        <span class="skill-tag">Svelte 5</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Vite</span>
+        <span class="skill-tag">Web Audio API</span>
+        <span class="skill-tag">Gamification</span>
+      </div>
+
+      <div class="project-links">
+        <a class="cert-btn cert-btn-pdf" href="https://github.com/anilg12/Emberwise" target="_blank" rel="noreferrer" data-cursor="GitHub">
+          <span>GitHub</span>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a class="cert-btn cert-btn-pdf" href="https://github.com/anilg12/Emberwise/releases/latest" target="_blank" rel="noreferrer" data-cursor="Download">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="proj.download">İndir</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE STUDY 02 — OBLIVION -->
+  <div class="project-wrap project-wrap-flip">
 
     <div class="project-art" data-reveal>
       <div class="project-art-grid"></div>
@@ -347,27 +414,40 @@
     </div>
 
     <div class="project-info">
-      <div class="eyebrow" data-i18n="proj.eyebrow">/ Vaka Çalışması 01</div>
+      <div class="eyebrow" data-i18n="proj.eyebrow">/ Vaka Çalışması 02</div>
       <h3>Oblivion.</h3>
-      <p class="tagline" data-i18n="proj.tagline">Windows için modern, güçlü ve şık bir kaldırma aracı &mdash; standart kaldırıcıların geride bıraktığı kalıntıları derinlemesine temizler.</p>
-      <p class="desc" data-i18n="proj.desc">WPF &amp; .NET ile yazılmış bir sistem bakım aracı. Oblivion; programları kaldırmakla kalmaz, kayıt defteri ve dosya sistemindeki gizli kalıntıları bulup yok eder. Avcı Modu ile rahatsız edici bir pencerenin üzerine sürükleyerek kaynağını anında bulur; Gereksiz Dosya Temizleyici, Başlangıç Yöneticisi ve Windows bloatware sökücü ile sistemi hızlı, temiz ve güvende tutar.</p>
+      <p class="tagline" data-i18n="proj.tagline">Windows ve macOS için modern, güçlü ve şık bir kaldırma aracı &mdash; standart kaldırıcıların geride bıraktığı kalıntıları derinlemesine temizler.</p>
+      <p class="desc" data-i18n="proj.desc">Windows'ta C# / WPF, macOS'ta yerel SwiftUI ile yazılmış bir sistem bakım aracı. Oblivion; programı kaldırdıktan sonra kayıt defteri ve dosya sistemindeki kalıntıları, bulunma nedeni ve güven seviyesiyle listeler. Canlı sistem izleyici, Avcı Modu, Gereksiz Dosya Temizleyici, Başlangıç Yöneticisi ve dosya parçalayıcı tek çatı altında; hiçbir şeyi senin yerine seçmez, her silmeden önce tam listeyle onay ister ve her zaman bir geri dönüş yolu bırakır.</p>
 
       <div class="project-meta">
         <div class="pm-cell"><div class="pm-label" data-i18n="proj.role">Rol</div><div class="pm-val" data-i18n="proj.role_v">Tek başına geliştirme</div></div>
         <div class="pm-cell"><div class="pm-label" data-i18n="proj.year">Yıl</div><div class="pm-val">2026</div></div>
-        <div class="pm-cell"><div class="pm-label" data-i18n="proj.scope">Kapsam</div><div class="pm-val" data-i18n="proj.scope_v">Masaüstü (Windows)</div></div>
-        <div class="pm-cell"><div class="pm-label" data-i18n="proj.stack">Yığın</div><div class="pm-val">C# / WPF</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.scope">Kapsam</div><div class="pm-val" data-i18n="proj.scope_v">Windows · macOS</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.stack">Yığın</div><div class="pm-val">C# / WPF · Swift</div></div>
         <div class="pm-cell"><div class="pm-label" data-i18n="proj.data">Veri</div><div class="pm-val">Registry · FS</div></div>
-        <div class="pm-cell"><div class="pm-label" data-i18n="proj.status">Durum</div><div class="pm-val" data-i18n="proj.status_v">v1.0 · yayında</div></div>
+        <div class="pm-cell"><div class="pm-label" data-i18n="proj.status">Durum</div><div class="pm-val" data-i18n="proj.status_v">v3.1 · yayında</div></div>
       </div>
 
       <div class="project-tags">
         <span class="skill-tag">C#</span>
         <span class="skill-tag">WPF</span>
-        <span class="skill-tag">.NET</span>
+        <span class="skill-tag">.NET 8</span>
+        <span class="skill-tag">SwiftUI</span>
         <span class="skill-tag">Windows</span>
+        <span class="skill-tag">macOS</span>
         <span class="skill-tag">Registry</span>
         <span class="skill-tag">Win32 API</span>
+      </div>
+
+      <div class="project-links">
+        <a class="cert-btn cert-btn-pdf" href="https://github.com/anilg12/Oblivion-Uninstaller" target="_blank" rel="noreferrer" data-cursor="GitHub">
+          <span>GitHub</span>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a class="cert-btn cert-btn-pdf" href="https://github.com/anilg12/Oblivion-Uninstaller/releases/latest" target="_blank" rel="noreferrer" data-cursor="Download">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="proj.download">İndir</span>
+        </a>
       </div>
     </div>
   </div>
