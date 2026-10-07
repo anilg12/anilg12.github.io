@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #07080a;
+  --color-carbon: #0c0d10;
+  --color-panel: #111216;
+  --color-line: #22242a;
+  --color-line-hi: #34373f;
+  --color-bone: #ede7dc;
+  --color-ash: #8f8b84;
+  --color-dim: #5a5853;
+  --color-copper: #e8743b;
+  --color-copper-hi: #ffb27a;
+  --color-copper-lo: #7a3a1a;
+  --color-phosphor: #7dffb1;
+
+  --font-display: "Archivo", "Arial Black", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-void);
+    color: var(--color-bone);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-copper);
+    color: var(--color-void);
+  }
+  a, button { -webkit-tap-highlight-color: transparent; }
+  :focus-visible {
+    outline: 1px solid var(--color-copper);
+    outline-offset: 3px;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Display type: Archivo pushed to its widest cut */
+.type-display {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.86;
+}
+
+.type-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Film grain over everything — static SVG noise, no JS */
+.grain {
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Fine measurement ticks used on rulers / gauges */
+.ticks-y {
+  background-image: repeating-linear-gradient(to bottom, var(--color-line-hi) 0 1px, transparent 1px 12px);
+}
+.ticks-x {
+  background-image: repeating-linear-gradient(to right, var(--color-line-hi) 0 1px, transparent 1px 12px);
+}
+
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+@keyframes blink { 50% { opacity: 0; } }
+.caret { animation: blink 1s steps(2) infinite; }
+
+@keyframes led {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--color-phosphor); }
+  50% { opacity: 0.55; box-shadow: 0 0 3px var(--color-phosphor); }
+}
+.led { animation: led 2.4s ease-in-out infinite; }
